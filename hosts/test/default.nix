@@ -9,6 +9,7 @@
     [
       ../common/default.nix
       ./hardware-configuration.nix
+      ../common/fish.nix
     ];
 
   networking.hostName = "nixos"; # Define your hostname.

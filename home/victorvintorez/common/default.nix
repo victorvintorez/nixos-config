@@ -1,7 +1,7 @@
 { inputs, lib, config, pkgs, ... }: {
   # Modules
   imports = [
-    # ../common/fish.nix
+    # ./fish.nix
   ];
 
   nixpkgs = {

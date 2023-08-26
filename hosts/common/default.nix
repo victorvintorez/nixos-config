@@ -2,7 +2,7 @@
 { config, pkgs, lib, inputs, outputs, ... }: {
   imports = [
     ./fish.nix
-  ]
+  ];
 
   # Enable nix-command and flakes
   nix = {

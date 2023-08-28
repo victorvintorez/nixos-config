@@ -44,25 +44,5 @@
 
         # TODO - Laptop
       };
-
-      # Standalone home-manager configuration entrypoint
-      # Available through 'home-manager --flake .#your-username@your-hostname'
-      homeConfigurations = {
-        # Test system (virtual machine)
-        "victorvintorez@test" = lib.homeManagerConfiguration {
-          pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-          modules = [ ./home/victorvintorez/test ];
-        };
-
-        # Desktop
-        "victorvintorez@desktop" = lib.homeManagerConfiguration {
-            pkgs = pkgsFor.x86_64-linux;
-            extraSpecialArgs = { inherit inputs outputs; };
-            modules = [ ./home/victorvintorez/desktop ];
-        };
-
-        # TODO - Laptop
-      };
     };
 }

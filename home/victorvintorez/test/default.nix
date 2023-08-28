@@ -2,7 +2,7 @@
 { inputs, lib, config, pkgs, ... }: {
   # You can import other home-manager modules here
   imports = [
-    ../common
+    ../modules/common.nix
   ];
 
   # Add stuff for your user as you see fit:

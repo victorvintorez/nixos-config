@@ -59,6 +59,15 @@
     };
   };
 
+  # Home-Manager
+  inputs.home-manager.nixosModules.home-manager = {
+    useUserPackages = true;
+    useGlobalPackages = true;
+    extraSpecialArgs = {
+      inherit inputs;
+    };
+  };
+
   # Minimal Default Packages
   environment.systemPackages = with pkgs; [
     wget

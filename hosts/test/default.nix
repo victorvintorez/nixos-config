@@ -1,11 +1,11 @@
 # TEST NIX CONFIG
-{ config, pkgs, ... }: {
+{ config, pkgs, inputs, ... }: {
   imports = [
       ./hardware-configuration.nix
       ../common
     ];
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "test"; # Define your hostname.
 
   # Configure keymap in X11
   services.xserver = {
@@ -13,16 +13,9 @@
     xkbVariant = "";
   };
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.victorvintorez = {
-    isNormalUser = true;
-    description = "Victor Vintorez";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+  inputs.home-manager.nixosModules.home-manager = {
+    users.victorvintorez = ../../home/victorvintorez/test;
   };
-
-  # Enable automatic login for the user.
-  services.getty.autologinUser = "victorvintorez";
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

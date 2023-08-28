@@ -14,6 +14,13 @@
   home = {
     username = "victorvintorez";
     homeDirectory = lib.mkForce "/home/victorvintorez";
+    isNormalUser = true;
+    initialPassword = "defaultPassword"
+    extraGroups = [
+      "wheel"
+      "plugdev"
+      "networkmanager"
+    ];
   };
 
   # Restart services

@@ -1,5 +1,5 @@
 # TEST NIX CONFIG
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, ... }: {
   imports = [
       ./hardware-configuration.nix
       ../common
@@ -13,7 +13,7 @@
     xkbVariant = "";
   };
 
-  inputs.home-manager.nixosModules.home-manager = {
+  home-manager = {
     users.victorvintorez = ../../home/victorvintorez/test;
   };
 

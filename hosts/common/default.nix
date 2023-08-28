@@ -1,6 +1,7 @@
 # BASE NIXOS CONFIG
 { config, pkgs, lib, inputs, outputs, ... }: {
   imports = [
+    inputs.home-manager.nixosModules.home-manager
     ./fish.nix
   ];
 
@@ -60,7 +61,7 @@
   };
 
   # Home-Manager
-  inputs.home-manager.nixosModules.home-manager = {
+  home-manager = {
     useUserPackages = true;
     useGlobalPackages = true;
     extraSpecialArgs = {

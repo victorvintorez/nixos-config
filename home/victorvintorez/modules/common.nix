@@ -15,7 +15,7 @@
     username = "victorvintorez";
     homeDirectory = lib.mkForce "/home/victorvintorez";
     isNormalUser = true;
-    initialPassword = "defaultPassword"
+    initialPassword = "defaultPassword";
     extraGroups = [
       "wheel"
       "plugdev"

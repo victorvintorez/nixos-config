@@ -32,14 +32,35 @@
       nixosConfigurations = {
         # Test system (virtual machine)
         test = lib.nixosSystem {
-          specialArgs = { inherit inputs outputs home-manager; };
-          modules = [ ./hosts/test ];
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/test
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPackages = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs outputs; };
+              home-manager.users = {
+                victorvintorez = import ./home/victorvintorez/test;
+              };
+            };
+          ];
         };
 
         # Desktop
         desktop = lib.nixosSystem {
-          specialArgs = { inherit inputs outputs home-manager; };
-          modules = [ ./hosts/desktop ];
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/desktop
+            {
+              home-manager.useGlobalPackages = true;
+              home-manager.useUserPackages = true;
+              home-manager.extraSpecialArgs = { inherit inputs outputs; };
+              home-manager.users = {
+                victorvintorez = import ./home/victorvintorez/desktop;
+              };
+            };
+          ];
         };
 
         # TODO - Laptop

@@ -13,10 +13,6 @@
     xkbVariant = "";
   };
 
-  home-manager = {
-    users.victorvintorez = ../../home/victorvintorez/test;
-  };
-
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

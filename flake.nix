@@ -32,13 +32,13 @@
       nixosConfigurations = {
         # Test system (virtual machine)
         test = lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs outputs home-manager; };
           modules = [ ./hosts/test ];
         };
 
         # Desktop
         desktop = lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
+          specialArgs = { inherit inputs outputs home-manager; };
           modules = [ ./hosts/desktop ];
         };
 

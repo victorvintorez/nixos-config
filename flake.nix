@@ -43,7 +43,7 @@
               home-manager.users = {
                 victorvintorez = import ./home/victorvintorez/test;
               };
-            };
+            }
           ];
         };
 
@@ -59,7 +59,7 @@
               home-manager.users = {
                 victorvintorez = import ./home/victorvintorez/desktop;
               };
-            };
+            }
           ];
         };
 

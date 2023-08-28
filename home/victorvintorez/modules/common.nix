@@ -7,14 +7,13 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = (_: true);
     };
   };
 
   # Setup User
   home = {
     username = "victorvintorez";
-    homeDirectory = "/home/victorvintorez";
+    homeDirectory = lib.mkForce "/home/victorvintorez";
   };
 
   # Restart services

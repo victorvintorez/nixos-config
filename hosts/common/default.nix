@@ -1,6 +1,7 @@
 # BASE NIXOS CONFIG
 { config, pkgs, lib, inputs, outputs, ... }: {
   imports = [
+    inputs.home-manager.nixosModules.home-manager
     ./fish.nix
   ];
 
@@ -64,4 +65,11 @@
     wget
     git
   ];
+
+  # Home-manager defaults
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    extraSpecialArgs = { inherit inputs outputs; };
+  };
 }

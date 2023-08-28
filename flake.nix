@@ -37,7 +37,7 @@
             ./hosts/test
             home-manager.nixosModules.home-manager
             {
-              home-manager.useGlobalPackages = true;
+              home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs outputs; };
               home-manager.users = {
@@ -53,7 +53,7 @@
           modules = [
             ./hosts/desktop
             {
-              home-manager.useGlobalPackages = true;
+              home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.extraSpecialArgs = { inherit inputs outputs; };
               home-manager.users = {

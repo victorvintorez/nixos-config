@@ -2,7 +2,7 @@
 { config, pkgs, lib, inputs, outputs, ... }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    inputs.agenix.nixosModules.default
+    #inputs.agenix.nixosModules.default
     ./fish.nix
   ];
 

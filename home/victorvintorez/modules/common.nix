@@ -4,6 +4,7 @@
     # ./fish.nix
     ./git.nix
     ./github-cli.nix
+    ./bitwarden-cli.nix
   ];
 
   nixpkgs = {

@@ -7,9 +7,15 @@
 
     # Home manager
     home-manager = {
-        url = "github:nix-community/home-manager";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # agenix
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Nix-hardware
     hardware.url = "github:nixos/nixos-hardware";

@@ -2,6 +2,7 @@
 { config, pkgs, lib, inputs, outputs, ... }: {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    inputs.agenix.nixosModules.default
     ./fish.nix
   ];
 
@@ -66,12 +67,21 @@
     git
   ];
 
+  # SSH Server
+  services.openssh = {
+    enable = true;
+    settings.PasswordAuthentication = false;
+    settings.KbdInteractiveAuthentication = false;
+  }
+
   # Home-manager defaults
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     extraSpecialArgs = { inherit inputs outputs; };
   };
+
+  # agenix
 
   # User defaults
   users = {

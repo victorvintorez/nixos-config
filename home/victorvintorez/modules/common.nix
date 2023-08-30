@@ -2,6 +2,8 @@
   # Modules
   imports = [
     # ./fish.nix
+    ./git.nix
+    ./github-cli.nix
   ];
 
   nixpkgs = {

@@ -79,7 +79,6 @@
       victorvintorez = {
         isNormalUser = true;
         initialPassword = "defaultPassword";
-        shell = pkgs.fish;
         extraGroups = [
           "wheel"
           "video"

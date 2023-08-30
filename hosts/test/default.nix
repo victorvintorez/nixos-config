@@ -28,7 +28,7 @@
 
   # Virtual Machine integration
   services.spice-vdagentd = {
-    enable
+    enable = true;
   };
 
   # Config State Version

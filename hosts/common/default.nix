@@ -72,7 +72,7 @@
     enable = true;
     settings.PasswordAuthentication = false;
     settings.KbdInteractiveAuthentication = false;
-  }
+  };
 
   # Home-manager defaults
   home-manager = {

@@ -26,6 +26,11 @@
     };
   };
 
+  # Virtual Machine integration
+  services.spice-vdagentd = {
+    enable
+  };
+
   # Config State Version
   system.stateVersion = "23.05"; # Did you read the comment?
 }

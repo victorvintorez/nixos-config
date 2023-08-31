@@ -2,6 +2,7 @@
   imports = [
     ./pipewire.nix
     ./services.nix
+    ./greeter.nix
   ];
 
   environment = {
@@ -18,7 +19,9 @@
       WLR_NO_HARDWARE_CURSORS = "1";
       XDG_SESSION_TYPE = "wayland";
       SDL_VIDEODRIVER = "wayland";
+      WLR_RENDERER_ALLOW_SOFTWARE = "1";
     };
+
   };
 
   xdg.portal = {

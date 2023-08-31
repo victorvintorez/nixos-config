@@ -4,6 +4,7 @@
     inputs.home-manager.nixosModules.home-manager
     #inputs.agenix.nixosModules.default
     ./fish.nix
+    ./fonts.nix
   ];
 
   # Enable nix-command and flakes

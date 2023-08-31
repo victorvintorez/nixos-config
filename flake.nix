@@ -33,18 +33,7 @@
       url = "github:hyprwm/xdg-desktop-portal-hyprland";
     };
 
-    # Cachix
-    nixConfig = {
-      extra-substituters = [
-        "https://cache.nixos.org"
-        "https://hyprland.cachix.org"
-      ];
 
-      extra-trusted-public-keys = [
-        "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-      ];
-    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
@@ -55,6 +44,19 @@
     in
     {
       inherit lib;
+
+      # Cachix
+      nixConfig = {
+        extra-substituters = [
+          "https://cache.nixos.org"
+          "https://hyprland.cachix.org"
+        ];
+
+        extra-trusted-public-keys = [
+          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+        ];
+      };
 
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'

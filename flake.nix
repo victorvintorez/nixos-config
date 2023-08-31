@@ -1,6 +1,19 @@
 {
   description = "Victor's NixOS Config";
 
+  # Cachix
+  nixConfig = {
+    extra-substituters = [
+      "https://cache.nixos.org"
+      "https://hyprland.cachix.org"
+    ];
+
+    extra-trusted-public-keys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+    ];
+  };
+
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -45,19 +58,7 @@
     {
       inherit lib;
 
-      # Cachix
-      nixConfig = {
-        extra-substituters = [
-          "https://cache.nixos.org"
-          "https://hyprland.cachix.org"
-        ];
-
-        extra-trusted-public-keys = [
-          "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
-          "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
-        ];
-      };
-
+      
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {

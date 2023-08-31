@@ -3,6 +3,7 @@
   imports = [
       ./hardware-configuration.nix
       ../common
+      ../common/nvidia.nix
     ];
 
   networking.hostName = "test"; # Define your hostname.

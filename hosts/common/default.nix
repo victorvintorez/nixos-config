@@ -5,6 +5,7 @@
     #inputs.agenix.nixosModules.default
     ./fish.nix
     ./fonts.nix
+    ./users.nix
   ];
 
   # Enable nix-command and flakes
@@ -84,19 +85,4 @@
 
   # agenix
 
-  # User defaults
-  users = {
-    users = {
-      victorvintorez = {
-        isNormalUser = true;
-        initialPassword = "defaultPassword";
-        extraGroups = [
-          "wheel"
-          "video"
-          "audio"
-          "networkmanager"
-        ];
-      };
-    };
-  };
 }

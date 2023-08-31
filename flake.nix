@@ -35,7 +35,7 @@
 
     # Cachix
     nixConfig = {
-      substituters = [
+      extra-substituters = [
         "https://cache.nixos.org"
         "https://hyprland.cachix.org"
       ];

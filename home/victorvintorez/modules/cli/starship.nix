@@ -38,7 +38,7 @@
       };
 
       directory = {
-        format = "[$path]( [$read_only]($read_only_style)) ";
+        format = "[$path]($style)( [$read_only]($read_only_style)) ";
       };
 
       time = {

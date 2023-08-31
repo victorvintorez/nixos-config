@@ -2,6 +2,7 @@
   # Modules
   imports = [
     ./cli
+    ./desktop
   ];
 
   nixpkgs = {

@@ -16,8 +16,8 @@
   services = {
     greetd = {
       enable = true;
-      settings = {
-        initial_session = rec {
+      settings = rec {
+        initial_session = {
           command = "Hyprland";
           user = "victorvintorez";
         };

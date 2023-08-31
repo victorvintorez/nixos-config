@@ -1,4 +1,4 @@
-{ inputs, pkgs, inputs, lib, ... }: {
+{ config, pkgs, inputs, lib, ... }: {
   imports = [
     ./pipewire.nix
     ./services.nix

@@ -6,6 +6,7 @@
     ./fish.nix
     ./fonts.nix
     ./users.nix
+    ./desktop
   ];
 
   # Enable nix-command and flakes

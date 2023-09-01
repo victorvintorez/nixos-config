@@ -28,8 +28,13 @@
   };
 
   # Virtual Machine integration
-  services.spice-vdagentd = {
-    enable = true;
+  services = {
+    spice-vdagentd = {
+      enable = true;
+    };
+    qemuGuest = {
+      enable = true;
+    };
   };
 
   # Config State Version

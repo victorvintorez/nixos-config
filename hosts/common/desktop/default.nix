@@ -2,7 +2,7 @@
   imports = [
     ./pipewire.nix
     # ./seatd.nix
-    ./greeter.nix
+    ./greeter
   ];
 
   environment = {

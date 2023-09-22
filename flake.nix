@@ -62,14 +62,6 @@
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
-        # Test system (virtual machine)
-        test = lib.nixosSystem {
-          specialArgs = { inherit inputs outputs; };
-          modules = [
-            ./hosts/test
-          ];
-        };
-
         # Desktop
         desktop = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
@@ -79,6 +71,12 @@
         };
 
         # TODO - Laptop
+        laptop = lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            ./hosts/laptop
+          ];
+        };
       };
     };
 }

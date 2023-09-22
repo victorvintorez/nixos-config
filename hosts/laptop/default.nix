@@ -3,10 +3,9 @@
   imports = [
       ./hardware-configuration.nix
       ../common
-      ../common/nvidia.nix
     ];
 
-  networking.hostName = "test"; # Define your hostname.
+  networking.hostName = "laptop"; # Define your hostname.
 
   # Configure keymap in X11
   services.xserver = {
@@ -23,17 +22,7 @@
   # Home-Manager config file
   home-manager = {
     users = {
-      victorvintorez = import ../../home/victorvintorez/test;
-    };
-  };
-
-  # Virtual Machine integration
-  services = {
-    spice-vdagentd = {
-      enable = true;
-    };
-    qemuGuest = {
-      enable = true;
+      victorvintorez = import ../../home/victorvintorez/laptop;
     };
   };
 

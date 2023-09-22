@@ -15,6 +15,11 @@
       experimental-features = [ "nix-command" "flakes" ];
       auto-optimise-store = true;
     };
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 1w";
+    };
   };
 
   # Bootloader
@@ -22,6 +27,7 @@
     loader = {
       systemd-boot = {
         enable = true;
+        configurationLimit = 10;
       };
       efi = {
         canTouchEfiVariables = true;
@@ -85,5 +91,4 @@
   };
 
   # agenix
-
 }

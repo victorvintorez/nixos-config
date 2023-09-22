@@ -5,7 +5,7 @@
       settings = {
         background = {
           path = ./background.png;
-          fit = "Fill"
+          fit = "Fill";
         };
       };
     };

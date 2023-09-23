@@ -7,7 +7,7 @@
 			defaultSearchEngine = "DuckDuckGo";
 		};
 		security = {
-			sanatizeOnShutdown = false;
+			sanitizeOnShutdown = false;
 			sandbox = false;
 		};
 		misc = {

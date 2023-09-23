@@ -6,7 +6,7 @@
   ];
 
   # Add stuff for your user as you see fit:
-  programs.neovim.enable = true;
+  #programs.neovim.enable = true;
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";

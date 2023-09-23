@@ -46,6 +46,12 @@
       url = "github:hyprwm/xdg-desktop-portal-hyprland";
     };
 
+    # Nixvim
+    nixvim = {
+	url = "github:nix-community/nixvim";
+	inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Schizofox
     schizofox.url = "github:schizofox/schizofox";
   };

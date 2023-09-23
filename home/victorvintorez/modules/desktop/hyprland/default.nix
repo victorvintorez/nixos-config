@@ -11,6 +11,7 @@
 		"$MOD" = "SUPER";
 		bind = [
 			"$MOD, Q, exec, ${pkgs.kitty}/bin/kitty"
+			"$MOD, C, killactive"
 			"$MOD, Space, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
 		];
 	};

@@ -4,10 +4,14 @@
     package = inputs.hyprland.packages.${pkgs.system}.default;
     enableNvidiaPatches = true;
     systemdIntegration = true;
+    xwayland = {
+	enable = true;
+    };
 	settings = {
 		"$MOD" = "SUPER";
 		bind = [
-			"$MOD, Q, exec, kitty"
+			"$MOD, Q, exec, ${pkgs.kitty}/bin/kitty"
+			"$MOD, Space, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
 		];
 	};
   };

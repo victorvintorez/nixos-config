@@ -5,6 +5,6 @@
     ./git.nix
     ./github-cli.nix
     ./bitwarden-cli.nix
-    ./nixvim.nix
+    ./nixvim
   ];
 }

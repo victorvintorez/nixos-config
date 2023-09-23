@@ -2,5 +2,6 @@
   imports = [
     ./hyprland
 	./kitty.nix
+	./schizofox.nix
   ];
 }

@@ -46,7 +46,8 @@
       url = "github:hyprwm/xdg-desktop-portal-hyprland";
     };
 
-
+    # Schizofox
+    schizofox.url = "github:schizofox/schizofox";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 

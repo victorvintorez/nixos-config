@@ -3,5 +3,6 @@
 
 	programs.nixvim = {
 		enable = true;
+		colorscheme = "catppuccin";
 	};
 }

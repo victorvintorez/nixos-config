@@ -1,0 +1,22 @@
+{ config, pkgs, ... }: {
+	programs.vscode = {
+		enable = true;
+		package = pkgs.vscodium;
+		userSettings = {
+			"update.mode" = "none";
+			"extensions.autoUpdate" = false;
+			"window.menuBarVisibility" = "toggle";
+			"editor.fontFamily" = "'Iosevka Nerd Font', 'monospace'";
+			"workbench.colorTheme" = "Catppuccin Mocha";
+			"workbench.iconTheme" = "vscode-icons";
+			"vsicons.dontShowNewVersionMessage" = true;
+			"editor.fontLigatures" = true;
+			"editor.minimap.enabled" = true;
+		};
+		extensions = with pkgs.vscode-extensions; [
+			bbenoist.nix
+			catppuccin.catppuccin-vsc
+			vscode-icons-team.vscode-icons
+		];
+	};
+}

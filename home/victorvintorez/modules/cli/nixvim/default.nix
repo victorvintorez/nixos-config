@@ -4,5 +4,13 @@
 	programs.nixvim = {
 		enable = true;
 		colorscheme = "catppuccin";
+
+		# Colorscheme
+		colorschemes = {
+			catppuccin = {
+				enable = true;
+				flavor = "mocha";
+			};
+		};
 	};
 }

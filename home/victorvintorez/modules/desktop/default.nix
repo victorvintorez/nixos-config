@@ -3,5 +3,6 @@
     ./hyprland
 	./kitty.nix
 	./schizofox.nix
+	./vscode
   ];
 }

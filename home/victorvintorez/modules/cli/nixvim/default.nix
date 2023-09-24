@@ -9,7 +9,7 @@
 		colorschemes = {
 			catppuccin = {
 				enable = true;
-				flavor = "mocha";
+				flavour = "mocha";
 			};
 		};
 	};

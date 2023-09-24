@@ -12,9 +12,11 @@
 			"vsicons.dontShowNewVersionMessage" = true;
 			"editor.fontLigatures" = true;
 			"editor.minimap.enabled" = true;
+			"nix.enableLanguageServer" = true;
+			"nix.serverPath" = "nixd";
 		};
 		extensions = with pkgs.vscode-extensions; [
-			bbenoist.nix
+			jnoortheen.nix-ide
 			catppuccin.catppuccin-vsc
 			vscode-icons-team.vscode-icons
 		];

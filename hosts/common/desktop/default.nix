@@ -1,7 +1,6 @@
 { config, pkgs, inputs, lib, ... }: {
   imports = [
     ./pipewire.nix
-    # ./seatd.nix
     ./greeter
   ];
 

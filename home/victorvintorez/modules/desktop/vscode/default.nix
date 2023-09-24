@@ -11,7 +11,6 @@
 			"workbench.iconTheme" = "vscode-icons";
 			"vsicons.dontShowNewVersionMessage" = true;
 			"editor.fontLigatures" = true;
-			"editor.minimap.enabled" = true;
 			"nix.enableLanguageServer" = true;
 			"nix.serverPath" = "nixd";
 		};

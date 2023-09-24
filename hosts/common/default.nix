@@ -74,6 +74,7 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    nixd
   ];
 
   # SSH Server

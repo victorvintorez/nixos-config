@@ -8,9 +8,14 @@
   networking.hostName = "laptop"; # Define your hostname.
 
   # Configure keymap in X11
-  services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+  services = {
+    xserver = {
+      layout = "us";
+      xkbVariant = "";
+    };
+    fprintd = {
+      enable = true;
+    };
   };
 
   # List packages installed in system profile. To search, run:

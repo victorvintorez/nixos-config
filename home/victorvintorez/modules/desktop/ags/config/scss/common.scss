@@ -1,0 +1,11 @@
+window {
+    background-color: transparent;
+}
+
+@mixin common {
+    all: unset;
+
+    * {
+        font-size: 14;
+    }
+}

@@ -48,12 +48,18 @@
 
     # Nixvim
     nixvim = {
-	url = "github:nix-community/nixvim";
-	inputs.nixpkgs.follows = "nixpkgs";
+	    url = "github:nix-community/nixvim";
+	    inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Schizofox
     schizofox.url = "github:schizofox/schizofox";
+
+    # Aylur's GTK Shell
+    ags = {
+      url = "github:Aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 

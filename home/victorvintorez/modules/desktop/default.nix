@@ -1,5 +1,6 @@
 { config, pkgs, outputs, ... }: {
   imports = [
+    ./ags
     ./hyprland
     ./rofi
 	  ./vscode

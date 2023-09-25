@@ -1,6 +1,5 @@
 { config, pkgs, inputs, lib, ... }: {
 	imports = [
-    inputs.hyprland.homeManagerModules.default
     ./env.nix
     ./keybinds.nix
     ./monitors.nix
@@ -10,6 +9,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.default;
     enableNvidiaPatches = true;
     systemdIntegration = true;
     xwayland = {

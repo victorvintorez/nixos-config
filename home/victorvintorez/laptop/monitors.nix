@@ -8,7 +8,7 @@
       refreshRate = 60;
       x = 0;
       y = 0;
-      workspace = 1;
+      workspace = "1";
     }
   ];
 }

@@ -7,6 +7,7 @@
     ./git.nix
     ./github-cli.nix
     ./lsd.nix
+    ./neofetch.nix
     ./starship.nix
     ./yazi.nix
   ];

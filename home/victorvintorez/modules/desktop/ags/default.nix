@@ -12,5 +12,5 @@ in {
     configDir = ./config;
   };
 
-  xdg.configFile."ags/css/style.css".text = css;
+  xdg.configFile."ags/css/style.css".source = css;
 }

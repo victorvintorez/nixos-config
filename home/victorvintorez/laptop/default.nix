@@ -3,6 +3,7 @@
   # You can import other home-manager modules here
   imports = [
     ../modules/common.nix
+    ./monitors.nix
   ];
 
   # Add stuff for your user as you see fit:

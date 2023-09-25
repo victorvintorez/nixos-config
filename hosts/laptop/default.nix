@@ -1,5 +1,5 @@
 # TEST NIX CONFIG
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   imports = [
       ./hardware-configuration.nix
       ../common
@@ -27,6 +27,10 @@
         sudo = {
           fprintAuth = true;
         };
+        gtklock = {
+	        fprintAuth = true;
+	        text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
+	      };
       };
     };
   };

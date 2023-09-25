@@ -3,9 +3,21 @@
 		enable = true;
 		package = pkgs.rofi-wayland;
 		cycle = false;
-		font = "Iosevka Term";
+		font = "Iosevka Nerd Font";
 		location = "center";
 		terminal = "kitty";
-		theme = "Catppuccin-Mocha";
+		theme = ./theme.rasi;
+		extraConfig = {
+			modi = "run,drun,window";
+			icon-theme = "Oranchelo";
+			show-icons = true;
+			drun-display-format = "{icon} ~~> {name}";
+			disable-history = true;
+			hide-scrollbar = true;
+			display-drun = "  Apps ";
+			display-run = "  Run ";
+			display-window = " 󰧨 Window ";
+			display-network = " 󰢩 Network ";
+		};
 	};
 }

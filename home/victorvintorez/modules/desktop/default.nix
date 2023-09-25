@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, outputs, ... }: {
   imports = [
     ./hyprland
     ./rofi
@@ -6,7 +6,7 @@
     ./dunst.nix
   	./kitty.nix
 	  ./schizofox.nix
-  ];
+  ] ++ (builtins.attrValues outputs.modules);
 
   home.packages = with pkgs; [
     cliphist

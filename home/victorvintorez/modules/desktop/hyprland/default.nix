@@ -2,7 +2,6 @@
 	imports = [
     ./env.nix
     ./keybinds.nix
-    ./monitors.nix
     ./startup.nix
     ./windowrules.nix
   ];

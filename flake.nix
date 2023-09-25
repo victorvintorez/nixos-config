@@ -64,7 +64,7 @@
     in
     {
       inherit lib;
-
+      modules = import ./modules;
       
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'

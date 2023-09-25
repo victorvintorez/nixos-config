@@ -1,0 +1,3 @@
+{
+  monitors = ./monitors.nix;
+}

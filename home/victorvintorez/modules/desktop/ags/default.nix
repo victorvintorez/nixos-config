@@ -7,6 +7,6 @@
   };
 
   xdg.configFile."ags/css/style.css".text = ''
-    ${pkgs.runCommand "style.css" {} "${pkgs.getBin pkgs.dart-sass} ${./config/scss/main.scss}"}
+    ${pkgs.runCommand "style.css" {} "${pkgs.dart-sass}/bin/sass ${./config/scss/main.scss}"}
   '';
 }

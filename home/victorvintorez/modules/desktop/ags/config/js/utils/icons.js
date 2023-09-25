@@ -1,4 +1,4 @@
-icons = {
+const icons = {
     settings: '󰒓',
     audio: {
         mic: {

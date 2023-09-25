@@ -1,4 +1,5 @@
 import PanelButton from "../PanelButton.js";
+import opts from '../../utils/options.js';
 
 const { Hyprland } = ags.Service;
 const { lookUpIcon } = ags.Utils;
@@ -39,8 +40,8 @@ const FocusedWindow = () => PanelButton({
     className: 'topbar-modules-focusedwindow',
     content: Box({
         children: [
-            ClientIcon(options.substitutes.ClientIcon),
-            ClientLabel(options.substitutes.ClientLabel),
+            ClientIcon(opts.substitutes.ClientIcon),
+            ClientLabel(opts.substitutes.ClientLabel),
         ],
     }),
 });

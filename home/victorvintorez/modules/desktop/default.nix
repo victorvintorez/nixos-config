@@ -6,6 +6,7 @@
     ./rofi
 	  ./vscode
     ./dunst.nix
+    ./gtklock.nix
   	./kitty.nix
 	  ./schizofox.nix
   ] ++ (builtins.attrValues outputs.modules);

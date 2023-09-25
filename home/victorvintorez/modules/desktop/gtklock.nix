@@ -17,7 +17,7 @@
     button {
       all: unset;
       color: transparent;
-      margin -20rem;
+      margin: -20rem;
     }
 
     #clock-label {

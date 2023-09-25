@@ -1,7 +1,6 @@
 import TopBar from './js/topbar/TopBar'
 import { forMonitors } from './js/utils/monitor'
 
-// SASS Support
 const css = ags.App.configDir + '/css/style.css';
 
 export default {

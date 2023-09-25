@@ -1,16 +1,18 @@
 { config, pkgs, inputs, ... }: 
 let
   css = pkgs.runCommand "style.css" {} ''
-    mkdir $out
-    ${pkgs.dart-sass}/bin/sass --load-path=${./config/scss} ${./config/scss/main.scss}
+    cp -r ${./config} $out
+    ${pkgs.dart-sass}/bin/sass --load-path=${./config/scss} ${./config/scss/main.scss} $out/css/style.css
   '';
 in {
   imports = [ inputs.ags.homeManagerModules.default ];
 
   programs.ags = {
     enable = true;
-    configDir = ./config;
   };
 
-  xdg.configFile."ags/css/style.css".source = css;
+  xdg.configFile.ags = {
+    source = css;
+    recursive = true;
+  };
 }

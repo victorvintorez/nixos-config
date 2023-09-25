@@ -11,7 +11,7 @@
 			modi = "run,drun,window";
 			icon-theme = "Oranchelo";
 			show-icons = true;
-			drun-display-format = "{icon} ~~> {name}";
+			drun-display-format = "~~> {icon} | {name}";
 			disable-history = true;
 			hide-scrollbar = true;
 			display-drun = "  Apps ";

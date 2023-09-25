@@ -3,16 +3,6 @@
     gtklock
   ];
 
-  security = {
-    pam = {
-      services = {
-        gtklock = {
-	  text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
-	};
-      };
-    };
-  };
-
   xdg.configFile."gtklock/style.css".text = ''
     window {
       background: rgba(0, 0, 0, .5);

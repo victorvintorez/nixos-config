@@ -1,6 +1,7 @@
 { config, pkgs, ... }: {
   imports = [
     ./logind.nix
+    ./gtklock.nix
   ];
   
   programs = {

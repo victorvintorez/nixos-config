@@ -1,6 +1,6 @@
-import PowerMenu from './modules/PowerMenu';
-import BatteryBar from './modules/BatteryBar';
-import FocusedWindow from './modules/FocusedWindow'
+import PowerMenu from './modules/PowerMenu.js';
+import BatteryBar from './modules/BatteryBar.js';
+import FocusedWindow from './modules/FocusedWindow.js'
 
 const { Window, CenterBox, Box } = ags.Widget;
 

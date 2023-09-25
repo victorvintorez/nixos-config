@@ -1,7 +1,7 @@
-import icons from '../../utils/icons';
-import FontIcon from '../../utils/components/FontIcon';
-import opts from '../../utils/options';
-import PanelButton from '../PanelButton';
+import icons from '../../utils/icons.js';
+import FontIcon from '../../utils/components/FontIcon.js';
+import opts from '../../utils/options.js';
+import PanelButton from '../PanelButton.js';
 
 const { Battery } = ags.Service;
 const { Widget, Box, Stack, Icon, Revealer, Label } = ags.Widget;
@@ -18,7 +18,7 @@ const Indicator = () => Stack({
 
 const PercentLabel = () => Revealer({
     transition: 'slide_right',
-    revealChild: options.battery.showPercentage,
+    revealChild: opts.battery.showPercentage,
     child: Label({
         connections: [[Battery, label => {
             label.label = `${Battery.percent}%`;
@@ -44,8 +44,8 @@ const BatteryBar = () => {
             binds: [['visible', Battery, 'available']],
             connections: [[Battery, w => {
                 w.toggleClassName('charging', Battery.charging || Battery.charged);
-                w.toggleClassName('medium', Battery.percent < options.batteryBar.medium);
-                w.toggleClassName('low', Battery.percent < options.batteryBar.low);
+                w.toggleClassName('medium', Battery.percent < opts.battery.medium);
+                w.toggleClassName('low', Battery.percent < opts.battery.low);
             }]],
             children: [
                 Indicator(),

@@ -1,5 +1,5 @@
-import TopBar from './js/topbar/TopBar'
-import { forMonitors } from './js/utils/monitor'
+import TopBar from './js/topbar/TopBar.js'
+import { forMonitors } from './js/utils/monitor.js'
 
 const css = ags.App.configDir + '/css/style.css';
 

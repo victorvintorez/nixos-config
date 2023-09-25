@@ -1,5 +1,5 @@
-import icons from '../../utils/icons';
-import PanelButton from '../PanelButton';
+import icons from '../../utils/icons.js';
+import PanelButton from '../PanelButton.js';
 
 const { Icon } = ags.Widget;
 

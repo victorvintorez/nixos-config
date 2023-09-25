@@ -1,4 +1,4 @@
-import PanelButton from "../PanelButton";
+import PanelButton from "../PanelButton.js";
 
 const { Hyprland } = ags.Service;
 const { lookUpIcon } = ags.Utils;

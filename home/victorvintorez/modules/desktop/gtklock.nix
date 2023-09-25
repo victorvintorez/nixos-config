@@ -1,7 +1,17 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   home.packages = with pkgs; [
     gtklock
   ];
+
+  security = {
+    pam = {
+      services = {
+        gtklock = {
+	  text = lib.readFile "${pkgs.gtklock}/etc/pam.d/gtklock";
+	};
+      };
+    };
+  };
 
   xdg.configFile."gtklock/style.css".text = ''
     window {

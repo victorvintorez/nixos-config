@@ -2,6 +2,7 @@
   imports = [
     ./nixvim
     ./bitwarden-cli.nix
+    ./btop.nix
     ./fish.nix
     ./git.nix
     ./github-cli.nix

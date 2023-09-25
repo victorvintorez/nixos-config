@@ -23,12 +23,25 @@
 
   };
 
-  xdg.portal = {
-    enable = true;
-    wlr.enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-    ];
+  xdg = {
+    autostart = {
+      enable = true;
+    };
+    icons = {
+      enable = true;
+    };
+    menus = {
+      enable = true;
+    };
+    mime = {
+      enable = true;
+    };
+    portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
   };
 
   sound = {

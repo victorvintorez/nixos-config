@@ -9,7 +9,7 @@ const { Widget, Box, Stack, Icon, Revealer, Label } = ags.Widget;
 const Indicator = () => Stack({
     items: [
         ['false', Icon({ binds: [['icon', Battery, 'iconName']] })],
-        ['true', FontIcon({ icon: icons.battery.charging })],
+        ['true', FontIcon({ icon: icons.battery.charging_full })],
     ],
     connections: [[Battery, stack => {
         stack.shown = `${Battery.charging || Battery.charged}`;

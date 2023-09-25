@@ -8,7 +8,7 @@ const { Box, Label, Icon } = ags.Widget;
 const ClientLabel = () => Label({
     connections: [[Hyprland, label => {
         let name = Hyprland.active.client.title;
-        opts.substitutes.ClientLabel.forEach(([from, to]) => {
+        opts.substitutes.ClientTitle.forEach(([from, to]) => {
             if(name === from)
                 name = to;
         });

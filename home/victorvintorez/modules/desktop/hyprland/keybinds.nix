@@ -60,6 +60,10 @@
 				"$M, Space, exec, rofi -show drun"
         "$M, V, exec, cliphist | rofi -dmenu | cliphist decode | wl-copy"
 			];
+      bindm = [
+        "$M, mouse:272, movewindow"
+        "$M, mouse:273, resizewindow"
+      ];
     };
   };
 }

@@ -76,7 +76,7 @@
         ];
       };
       dwindle = {
-        psuedotile = true;
+        pseudotile = true;
         preserve_split = true;
       };
       gestures = {

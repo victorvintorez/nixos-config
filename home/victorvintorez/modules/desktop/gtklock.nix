@@ -5,7 +5,7 @@
 
   xdg.configFile."gtklock/style.css".text = ''
     window {
-      background: rgba(0, 0, 0, .8);
+      background: rgba(0, 0, 0, .95);
       font-family: 'Iosevka Nerd Font';
     }
 

@@ -1,19 +1,8 @@
-{ config, pkgs, inputs, lib, ... }: 
-let
-  #css = pkgs.runCommand "style.css" {} ''
-  #  cp -r ./config $out
-  #  ${pkgs.dart-sass}/bin/sass --load-path=./config/scss ./config/scss/main.scss $out/css/style.css
-  #'';
-in {
+{ config, pkgs, inputs, lib, ... }: {
   imports = [ inputs.ags.homeManagerModules.default ];
 
   programs.ags = {
     enable = true;
-    configDir = ./config;
+    configDir = config.lib.file.mkOutOfStoreSymlink "${./config}";
   };
-
-  #xdg.configFile.ags = {
-  #  source = lib.mkForce css;
-  #  recursive = true;
-  #};
 }

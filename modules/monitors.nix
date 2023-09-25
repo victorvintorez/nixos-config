@@ -49,7 +49,7 @@ in
           default = true;
         };
         workspace = mkOption {
-          type = types.nullOr types.path;
+          type = types.nullOr types.str;
           default = null;
         };
       };

@@ -18,10 +18,10 @@
         "$M, down, movefocus, d"
 
         # Window Movement
-        "$M, left, movewindow, l"
-        "$M, right, movewindow, r"
-        "$M, up, movewindow, u"
-        "$M, down, movewindow, d"
+        "$M SHIFT, left, movewindow, l"
+        "$M SHIFT, right, movewindow, r"
+        "$M SHIFT, up, movewindow, u"
+        "$M SHIFT, down, movewindow, d"
 
         # Switch Workspaces
         "$M, 1, workspace, 1"

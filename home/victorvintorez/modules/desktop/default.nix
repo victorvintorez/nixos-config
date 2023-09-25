@@ -2,6 +2,7 @@
   imports = [
     ./ags
     ./hyprland
+    ./platform
     ./rofi
 	  ./vscode
     ./dunst.nix

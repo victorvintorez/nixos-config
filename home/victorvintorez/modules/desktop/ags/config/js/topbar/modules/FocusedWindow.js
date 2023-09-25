@@ -1,0 +1,48 @@
+import PanelButton from "../PanelButton";
+
+const { Hyprland } = ags.Service;
+const { lookUpIcon } = ags.Utils;
+const { Box, Label, Icon } = ags.Widget;
+
+const ClientLabel = substitutes => Label({
+    connections: [[Hyprland, label => {
+        let name = Hyprland.active.client.title;
+        substitutes.forEach(([from, to]) => {
+            if(name === from)
+                name = to;
+        });
+        label.label = name;
+    }]],
+});
+
+const ClientIcon = substitutes => Icon({
+    connections: [[Hyprland, icon => {
+        let classIcon = `${Hyprland.active.client.class}-symbolic`;
+        let titleIcon = `${Hyprland.active.client.title}-symbolic`;
+        substitutes.forEach(([from, to]) => {
+            if(classIcon === from)
+                classIcon = to;
+            if(titleIcon === from)
+                titleIcon = to;
+        });
+        const hasClassIcon = lookUpIcon(classIcon);
+        const hasTitleIcon = lookUpIcon(titleIcon);
+        if(hasClassIcon)
+            icon.icon = classIcon;
+        if(hasTitleIcon)
+            icon.icon = titleIcon;
+        icon.visible = hasTitleIcon || hasClassIcon;
+    }]],
+});
+
+const FocusedWindow = () => PanelButton({
+    className: 'topbar-modules-focusedwindow',
+    content: Box({
+        children: [
+            ClientIcon(options.substitutes.ClientIcon),
+            ClientLabel(options.substitutes.ClientLabel),
+        ],
+    }),
+});
+
+export default FocusedWindow;

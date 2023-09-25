@@ -1,4 +1,5 @@
-
+import TopBar from './js/topbar/TopBar'
+import { forMonitors } from './js/utils/monitor'
 
 // SASS Support
 const css = ags.App.configDir + '/css/style.css';
@@ -6,6 +7,6 @@ const css = ags.App.configDir + '/css/style.css';
 export default {
     style: css,
     windows: [
-        // Topbar
-    ]
+        forMonitors(TopBar)
+    ].flat(2)
 }

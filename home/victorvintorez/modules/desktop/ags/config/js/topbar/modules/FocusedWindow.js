@@ -5,10 +5,10 @@ const { Hyprland } = ags.Service;
 const { lookUpIcon } = ags.Utils;
 const { Box, Label, Icon } = ags.Widget;
 
-const ClientLabel = substitutes => Label({
+const ClientLabel = () => Label({
     connections: [[Hyprland, label => {
         let name = Hyprland.active.client.title;
-        substitutes.forEach(([from, to]) => {
+        opts.substitutes.ClientLabel.forEach(([from, to]) => {
             if(name === from)
                 name = to;
         });
@@ -16,11 +16,11 @@ const ClientLabel = substitutes => Label({
     }]],
 });
 
-const ClientIcon = substitutes => Icon({
+const ClientIcon = () => Icon({
     connections: [[Hyprland, icon => {
         let classIcon = `${Hyprland.active.client.class}-symbolic`;
         let titleIcon = `${Hyprland.active.client.title}-symbolic`;
-        substitutes.forEach(([from, to]) => {
+        opts.substitutes.ClientIcon.forEach(([from, to]) => {
             if(classIcon === from)
                 classIcon = to;
             if(titleIcon === from)
@@ -40,8 +40,8 @@ const FocusedWindow = () => PanelButton({
     className: 'topbar-modules-focusedwindow',
     content: Box({
         children: [
-            ClientIcon(opts.substitutes.ClientIcon),
-            ClientLabel(opts.substitutes.ClientLabel),
+            ClientIcon(),
+            ClientLabel(),
         ],
     }),
 });

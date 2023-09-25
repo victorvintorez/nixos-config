@@ -1,4 +1,4 @@
-export default {
+const options = {
     prefferedMpris: 'spotify',
     workspaces: 6,
     battery: {
@@ -18,3 +18,5 @@ export default {
         ],
     }
 }
+
+export default options;

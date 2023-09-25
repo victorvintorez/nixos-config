@@ -4,7 +4,7 @@ import PanelButton from '../PanelButton.js';
 const { Icon } = ags.Widget;
 
 const PowerMenu = () => PanelButton({
-    className: 'topbar-powermenu',
+    className: 'topbar-modules-powermenu',
     content: Icon(icons.powermenu.shutdown),
     onClicked: () => ags.App.openWindow('powermenu'),
 });

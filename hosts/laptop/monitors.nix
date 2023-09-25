@@ -1,6 +1,4 @@
-{ ... }: {
-  imports = [ ../../home/victorvintorez/modules/desktop/hyprland/monitors.nix ];
-
+{ config, ... }: {
   monitors = [
     {
       name = "eDP-1";

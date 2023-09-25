@@ -1,7 +1,11 @@
 { config, pkgs, inputs, lib, ... }: {
 	imports = [
     inputs.hyprland.homeManagerModules.default
-    ../../../../../hosts/${config.networking.hostname}/monitors.nix
+    ./env.nix
+    ./keybinds.nix
+    ./monitors.nix
+    ./startup.nix
+    ./windowrules.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -88,9 +92,9 @@
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
       };
-		};
-    extraConfig =
-      lib.concatMapStrings (
+
+      # Monitor Mapping
+      monitor = map (
         m: let 
           resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
           position = "${toString m.x}x${toString m.y}";
@@ -98,7 +102,12 @@
           if m.enabled
           then "${resolution},${position},1"
           else "disable"
-        }\n"
+        }"
       ) (config.monitors);
+
+      workspace = map (m:
+        "${m.name},${m.workspace}"
+      ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
+		};
   };
 }

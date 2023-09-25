@@ -3,6 +3,7 @@
   imports = [
     ./cli
     ./desktop
+    ./nixcolors.nix
   ];
 
   nixpkgs = {

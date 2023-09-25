@@ -6,7 +6,10 @@
     configDir = ./config;
   };
 
-  xdg.configFile."ags/css/style.css".text = ''
-    ${pkgs.runCommand "style.css" {} "${pkgs.dart-sass}/bin/sass --load-path=${./config/scss} ${./config/scss/main.scss}"}
+  xdg.configFile."ags/css/style.css".source = ''
+    ${pkgs.runCommand "style.css" {} ''
+      mkdir $out
+      ${pkgs.dart-sass}/bin/sass --load-path=${./config/scss} ${./config/scss/main.scss}
+    ''}
   '';
 }

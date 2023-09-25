@@ -1,19 +1,104 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, lib, ... }: {
+	imports = [
+    inputs.hyprland.homeManagerModules.default
+    ../../../../../hosts/${config.networking.hostname}/monitors.nix
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.default;
     enableNvidiaPatches = true;
     systemdIntegration = true;
     xwayland = {
-	enable = true;
+			enable = true;
     };
-	settings = {
-		"$MOD" = "SUPER";
-		bind = [
-			"$MOD, Q, exec, ${pkgs.kitty}/bin/kitty"
-			"$MOD, C, killactive"
-			"$MOD, Space, exec, ${pkgs.rofi-wayland}/bin/rofi -show drun"
-		];
-	};
+		settings = {
+      general = {
+        gaps_in = 5;
+        gaps_out = 5;
+        border_size = 2;
+        col = {
+          active_border = "0x${config.colorScheme.colors.base0C} 0x${config.colorScheme.colors.base0D} 45deg";
+          inactive_border = "${config.colorScheme.colors.base04}";
+        };
+        no_border_on_floating = false;
+        no_cursor_warps = true;
+        resize_on_border = true;
+
+        layout = "dwindle";
+      };
+      input = {
+        kb_layout = "us";
+        numlock_by_default = true;
+
+        follow_mouse = 3;
+        float_switch_override_focus = 1;
+
+        touchpad = {
+          natural_scroll = false;
+          middle_button_emulation = true;
+          drag_lock = true;
+        };
+
+        sensitivity = 0;
+      };
+      decoration = {
+        rounding = 5;
+        multisample_edges = true;
+
+        active_opacity = 0.98;
+        inactive_opacity = 0.92;
+        fullscreen_opacity = 1.0;
+
+        drop_shadow = false;
+
+        blur = {
+          enabled = true;
+          size = 10;
+          xray = true;
+        };
+      };
+      animations = {
+        enabled = true;
+        bezier = [
+          "smoothOut, 0.36, 0, 0.66, -0.56"
+          "smoothIn, 0.25, 1, 0.5, 1"
+          "overshot, 0.4, 0.8, 0.2, 1.2"
+        ];
+        animation = [
+          "windows, 1, 4, overshot, slide"
+          "windowsOut, 1, 4, smoothOut, slide"
+          "border, 1, 10, default"
+
+          "fade, 1, 10, smoothIn"
+          "fadeDim, 1, 10, smoothIn"
+          "workspaces, 1, 4, overshot, slidevert"
+        ];
+      };
+      dwindle = {
+        psuedotile = true;
+        preserve_split = true;
+      };
+      gestures = {
+        workspace_swipe = true;
+        worspace_swipe_fingers = 3;
+        workspace_swipe_distance = 300;
+        workspace_swipe_invert = false;
+      };
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+      };
+		};
+    extraConfig =
+      lib.concatMapStrings (
+        m: let 
+          resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+          position = "${toString m.x}x${toString m.y}";
+        in "monitor=${m.name},${
+          if m.enabled
+          then "${resolution},${position},1"
+          else "disable"
+        }\n"
+      ) (config.monitors);
   };
 }

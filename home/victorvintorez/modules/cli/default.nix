@@ -1,12 +1,12 @@
 {
   imports = [
+    ./nixvim
+    ./bitwarden-cli.nix
     ./fish.nix
-    ./starship.nix
     ./git.nix
     ./github-cli.nix
-    ./bitwarden-cli.nix
     ./lsd.nix
+    ./starship.nix
     ./yazi.nix
-    ./nixvim
   ];
 }

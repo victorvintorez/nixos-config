@@ -5,7 +5,7 @@
 		cycle = false;
 		font = "Iosevka Term";
 		location = "center";
-		terminal = "${pkgs.kitty}/bin/kitty";
+		terminal = "kitty";
 		theme = "Catppuccin-Mocha";
 	};
 }

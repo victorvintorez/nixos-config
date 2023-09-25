@@ -1,8 +1,15 @@
 { config, pkgs, ... }: {
   imports = [
     ./hyprland
-	./kitty.nix
-	./schizofox.nix
-	./vscode
+    ./rofi
+	  ./vscode
+    ./dunst.nix
+  	./kitty.nix
+	  ./schizofox.nix
+  ];
+
+  home.packages = with pkgs; [
+    cliphist
+    wl-clipboard
   ];
 }

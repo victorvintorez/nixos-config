@@ -1,6 +1,5 @@
 import themes from '../../themes.js';
 import setupScss from './scss.js';
-import setupHyprland from './hyprland.js';
 import { SettingsDialog } from '../../settingsdialog/SettingsDialog.js';
 const { Service } = ags;
 const { USER, exec, execAsync, readFile, writeFile, CACHE_DIR } = ags.Utils;
@@ -14,7 +13,6 @@ class ThemeService extends Service {
 
     constructor() {
         super();
-        exec('swww init');
         this.setup();
     }
 
@@ -36,8 +34,6 @@ class ThemeService extends Service {
             ...this.settings,
         };
         setupScss(theme);
-        setupHyprland(theme);
-        this.setupOther();
         this.setupWallpaper();
     }
 
@@ -46,15 +42,6 @@ class ThemeService extends Service {
         this._settings = null;
         this.setup();
         this.emit('changed');
-    }
-
-    setupOther() {
-        const darkmode = this.getSetting('color_scheme') === 'dark';
-
-        if (exec('which gsettings')) {
-            const gsettings = 'gsettings set org.gnome.desktop.interface color-scheme';
-            execAsync(`${gsettings} "prefer-${darkmode ? 'dark' : 'light'}"`).catch(print);
-        }
     }
 
     setupWallpaper() {

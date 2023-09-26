@@ -1,7 +1,6 @@
 import icons from '../../icons.js';
 import PowerMenu from '../../services/powermenu.js';
 import Theme from '../../services/theme/theme.js';
-import Lockscreen from '../../services/lockscreen.js';
 import Avatar from '../../misc/Avatar.js';
 import { uptime } from '../../variables.js';
 const { Battery } = ags.Service;
@@ -60,7 +59,7 @@ export default () => Box({
                         }),
                         Button({
                             valign: 'center',
-                            onClicked: Lockscreen.lockscreen,
+                            onClicked: ags.Utils.exec('gtklock'),
                             child: Icon(icons.lock),
                         }),
                         Button({

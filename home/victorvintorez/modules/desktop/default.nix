@@ -15,5 +15,11 @@
     cliphist
     wl-clipboard
     brightnessctl
+    wayshot
+    swappy
+    slurp
+    wf-recorder
+    libnotify
+    xdg-utils
   ];
 }

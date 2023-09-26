@@ -8,7 +8,7 @@ class RecorderService extends Service {
         Service.register(this, { 'timer': ['int'] });
     }
 
-    _path = GLib.get_home_dir() + '/Videos/Screencasting';
+    _path = GLib.get_home_dir() + '/Videos/screen-recordings';
     _timer = 0;
     _recording = false;
     _screenshotting = false;

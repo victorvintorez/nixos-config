@@ -12,7 +12,7 @@ export default class PowerMenu extends Service {
         const [cmd, title] = {
             'sleep': ['systemctl suspend', 'Sleep'],
             'reboot': ['systemctl reboot', 'Reboot'],
-            'logout': ['pkill Hyprland', 'Log Out'],
+            'logout': ['gtklock', 'Log Out'],
             'shutdown': ['shutdown now', 'Shutdown'],
         }[action];
 

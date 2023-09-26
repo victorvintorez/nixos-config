@@ -3,14 +3,11 @@ export default {
     preferredMpris: 'spotify',
 
     // number of workspaces shown on panel and overview
-    workspaces: 7,
-
-    //
-    dockItemSize: 56,
+    workspaces: 6,
 
     battaryBar: {
         // wether to show percentage by deafult
-        showPercentage: false,
+        showPercentage: true,
 
         // at what percentages should the battery-bar change color
         low: 30,
@@ -24,5 +21,5 @@ export default {
     systemFetchInterval: 5000,
 
     // the slide down animation on quicksettings and dashboard
-    windowAnimationDuration: 250,
+    windowAnimationDuration: 200,
 };

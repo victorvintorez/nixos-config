@@ -5,7 +5,6 @@ import MediaIndicator from './buttons/MediaIndicator.js';
 import DateButton from './buttons/DateButton.js';
 import NotificationIndicator from './buttons/NotificationIndicator.js';
 import SysTray from './buttons/SysTray.js';
-import ColorPicker from './buttons/ColorPicker.js';
 import SystemIndicators from './buttons/SystemIndicators.js';
 import PowerMenu from './buttons/PowerMenu.js';
 import Separator from '../misc/Separator.js';
@@ -60,7 +59,6 @@ const End = () => Box({
             items: submenuItems,
             children: [
                 SysTray(),
-                ColorPicker(),
             ],
         }),
         SeparatorDot(),

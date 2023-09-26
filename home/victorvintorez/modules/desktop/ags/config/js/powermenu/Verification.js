@@ -15,10 +15,6 @@ export default () => PopupWindow({
                     label.label = PowerMenu.instance.title || '';
                 }]],
             }),
-            Label({
-                className: 'desc',
-                label: 'Are you sure?',
-            }),
             Box({
                 className: 'buttons',
                 vexpand: true,
@@ -26,11 +22,11 @@ export default () => PopupWindow({
                 homogeneous: true,
                 children: [
                     Button({
-                        child: Label('No'),
+                        child: Label('󰅖'),
                         onClicked: () => ags.App.toggleWindow('verification'),
                     }),
                     Button({
-                        child: Label('Yes'),
+                        child: Label('󰄬'),
                         onClicked: () => ags.Utils.exec(PowerMenu.instance.cmd),
                     }),
                 ],

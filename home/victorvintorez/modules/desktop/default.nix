@@ -21,5 +21,6 @@
     wf-recorder
     libnotify
     xdg-utils
+    inotify-tools
   ];
 }

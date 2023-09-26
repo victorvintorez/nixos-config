@@ -45,6 +45,7 @@ class ThemeService extends Service {
     }
 
     setupWallpaper() {
+        exec('swww init');
         execAsync([
             'swww', 'img',
             '--transition-type', 'grow',

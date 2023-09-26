@@ -35,7 +35,7 @@ export const WifiSelection = () => Menu({
     content: Box({
         vertical: true,
         connections: [[Network, box => box.children =
-            Network?.wifi?.accessPoints.map(ap => Button({
+            Network.wifi?.accessPoints.map(ap => Button({
                 onClicked: `nmcli device wifi connect ${ap.bssid}`,
                 child: Box({
                     children: [

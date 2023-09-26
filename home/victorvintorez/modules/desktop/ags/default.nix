@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     dart-sass
     pulseaudio
+    pavucontrol
     gnome.gnome-bluetooth
   ];
 }

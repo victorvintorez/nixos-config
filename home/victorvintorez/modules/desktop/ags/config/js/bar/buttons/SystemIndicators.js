@@ -1,25 +1,10 @@
 import HoverRevealer from '../../misc/HoverRevealer.js';
 import PanelButton from '../PanelButton.js';
-import Asusctl from '../../services/asusctl.js';
 import Indicator from '../../services/onScreenIndicator.js';
 import icons from '../../icons.js';
 const { App } = ags;
 const { Bluetooth, Audio, Notifications, Network } = ags.Service;
 const { Box, Label, Icon, Stack } = ags.Widget;
-
-const ProfileIndicator = () => Icon({
-    connections: [[Asusctl, icon => {
-        icon.visible = Asusctl.profile !== 'Balanced';
-        icon.icon = icons.asusctl.profile[Asusctl.profile];
-    }]],
-});
-
-const ModeIndicator = () => Icon({
-    connections: [[Asusctl, icon => {
-        icon.visible = Asusctl.mode !== 'Hybrid';
-        icon.icon = icons.asusctl.mode[Asusctl.mode];
-    }]],
-});
 
 const MicrophoneMuteIndicator = () => Icon({
     icon: icons.audio.mic.muted,
@@ -101,8 +86,6 @@ export default () => PanelButton({
     }]],
     child: Box({
         children: [
-            Asusctl?.available && ProfileIndicator(),
-            Asusctl?.available && ModeIndicator(),
             MicrophoneMuteIndicator(),
             DNDIndicator(),
             BluetoothDevicesIndicator(),

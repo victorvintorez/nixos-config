@@ -9,6 +9,7 @@
     ./gtklock.nix
   	./kitty.nix
 	  ./schizofox.nix
+    ./swww.nix
   ] ++ (builtins.attrValues outputs.modules);
 
   home.packages = with pkgs; [

@@ -1,7 +1,7 @@
 import Header from './widgets/Header.js';
 import PopupWindow from '../misc/PopupWindow.js';
 import { Volume, SinkSelector, AppMixer } from './widgets/Volume.js';
-import { NetworkToggle, WifiSelection } from './widgets/Network.js';
+//import { NetworkToggle, WifiSelection } from './widgets/Network.js';
 import { BluetoothToggle, BluetoothDevices } from './widgets/Bluetooth.js';
 import { ThemeToggle, ThemeSelector } from './widgets/Theme.js';
 import Media from './widgets/Media.js';
@@ -51,12 +51,12 @@ export default () => PopupWindow({
                 ],
             })]),
             Row(
-                [Homogeneous([NetworkToggle(), BluetoothToggle()]), DND()],
+                [Homogeneous([/*NetworkToggle(), */BluetoothToggle()]), DND()],
                 [/*WifiSelection(), */BluetoothDevices()],
             ),
             Row(
                 [Homogeneous([/*ProfileToggle(), */ThemeToggle()]), MicMute()],
-                [ProfileSelector(), ThemeSelector()],
+                [/*ProfileSelector(), */ThemeSelector()],
             ),
             // Row(
             //     [DND(), MicMute()],

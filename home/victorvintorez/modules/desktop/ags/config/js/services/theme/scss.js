@@ -59,7 +59,7 @@ export default async function(theme) {
     try {
         await writeFile(generated(scss(theme)), `${tmp}/generated.scss`);
         await writeFile(generated(theme.additional_scss || ''), `${tmp}/additional.scss`);
-        exec(`sassc ${ags.App.configDir}/scss/main.scss ${tmp}/style.css`);
+        exec(`sass ${ags.App.configDir}/scss/main.scss ${tmp}/style.css`);
         ags.App.resetCss();
         ags.App.applyCss(`${tmp}/style.css`);
     } catch (error) {

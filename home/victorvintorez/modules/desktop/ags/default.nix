@@ -5,4 +5,8 @@
     enable = true;
     configDir = config.lib.file.mkOutOfStoreSymlink "${./config}";
   };
+
+  home.packages = with pkgs; [
+    dart-sass
+  ];
 }

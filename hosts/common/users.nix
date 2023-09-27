@@ -13,17 +13,6 @@
           "seat"
         ];
       };
-      murein = {
-        isNormalUser = true;
-        initialPassword = "defaultPassword";
-        shell = pkgs.bash;
-        extraGroups = [
-          "video"
-          "audio"
-          "networkmanager"
-          "seat"
-        ];
-      };
     };
   };
 }

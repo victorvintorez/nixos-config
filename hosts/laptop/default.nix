@@ -58,7 +58,6 @@
   home-manager = {
     users = {
       victorvintorez = import ../../home/victorvintorez/laptop;
-      murein = import ../../home/murein/laptop;
     };
   };
 

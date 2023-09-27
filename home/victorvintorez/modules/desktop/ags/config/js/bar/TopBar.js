@@ -1,7 +1,6 @@
 import OverviewButton from './buttons/OverviewButton.js';
 import Workspaces from './buttons/Workspaces.js';
 import FocusedClient from './buttons/FocusedClient.js';
-import MediaIndicator from './buttons/MediaIndicator.js';
 import DateButton from './buttons/DateButton.js';
 import NotificationIndicator from './buttons/NotificationIndicator.js';
 import SysTray from './buttons/SysTray.js';
@@ -52,7 +51,6 @@ const End = () => Box({
     className: 'end',
     children: [
         SeparatorDot('Mpris', m => m.players.length > 0),
-        MediaIndicator(),
         Box({ hexpand: true }),
 
         SubMenu({

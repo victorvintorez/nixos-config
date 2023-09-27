@@ -22,6 +22,11 @@
     };
   };
 
+  # Enable Sound
+  sound = {
+    enable = true;
+  };
+
   # Bootloader
   boot = {
     loader = {

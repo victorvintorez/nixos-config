@@ -16,6 +16,11 @@
     fprintd = {
       enable = true;
     };
+    upower = {
+      enable = true;
+      criticalPowerAction = "PowerOff";
+      usePercentageForPolicy = true;
+    };
   };
 
   security = {

@@ -1,7 +1,7 @@
 import Header from './widgets/Header.js';
 import PopupWindow from '../misc/PopupWindow.js';
 import { Volume, SinkSelector, AppMixer } from './widgets/Volume.js';
-//import { NetworkToggle, WifiSelection } from './widgets/Network.js';
+import { NetworkToggle, WifiSelection } from './widgets/Network.js';
 import { BluetoothToggle, BluetoothDevices } from './widgets/Bluetooth.js';
 import { ThemeToggle, ThemeSelector } from './widgets/Theme.js';
 import Media from './widgets/Media.js';

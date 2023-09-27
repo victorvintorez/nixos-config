@@ -7,7 +7,7 @@
 	  ./vscode
     ./gtklock.nix
   	./kitty.nix
-	  #./schizofox.nix
+	  ./schizofox.nix
     ./swww.nix
   ] ++ (builtins.attrValues outputs.modules);
 

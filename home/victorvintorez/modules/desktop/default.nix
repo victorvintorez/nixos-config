@@ -9,6 +9,7 @@
     ./gtklock.nix
   	./kitty.nix
 	  ./schizofox.nix
+    ./university.nix
   ] ++ (builtins.attrValues outputs.modules);
 
   home.packages = with pkgs; [
@@ -22,6 +23,5 @@
     libnotify
     xdg-utils
     inotify-tools
-    libreoffice
   ];
 }

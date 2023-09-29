@@ -34,7 +34,7 @@ const misc = {
     screen_corners: false,
     bar_style: 'normal',
     layout: 'topbar',
-    desktop_clock: 'center center',
+    desktop_clock: 'bottom right',
 };
 
 const colors = {

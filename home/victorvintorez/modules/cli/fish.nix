@@ -4,5 +4,8 @@
     functions = {
       fish_greeting = "";
     };
+    shellInit = ''
+      direnv hook fish | source
+    '';
   };
 }

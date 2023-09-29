@@ -1,14 +1,36 @@
 # TEST NIX CONFIG
 { config, pkgs, lib, ... }: {
   imports = [
-      ./hardware-configuration.nix
-      ../common
-    ];
+    ./hardware-configuration.nix
+    ../common
+  ];
+
+  boot.blacklistedKernelModules = [ "snd_hda_intel" "snd_soc_skl" ];
 
   networking.hostName = "laptop"; # Define your hostname.
 
+  powerManagement = {
+    enable = true;
+    powertop = {
+      enable = true;
+    };
+  };
+
   # Configure keymap in X11
   services = {
+    auto-cpufreq = {
+      enable = true;
+      settings = {
+        battery = {
+          governor = "powersave";
+          turbo = "never";
+        };
+        charger = {
+          governor = "powersave";
+          turbo = "auto";
+        };
+      };
+    };
     xserver = {
       layout = "us";
       xkbVariant = "";

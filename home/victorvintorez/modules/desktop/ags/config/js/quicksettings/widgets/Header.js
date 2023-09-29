@@ -59,7 +59,7 @@ export default () => Box({
                         }),
                         Button({
                             valign: 'center',
-                            onClicked: ags.Utils.exec('gtklock'),
+                            onClicked: () => ags.Utils.exec('gtklock'),
                             child: Icon(icons.lock),
                         }),
                         Button({

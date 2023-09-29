@@ -10,7 +10,6 @@
   ];
 
   boot.kernelPackages = pkgs.linuxPackagesFor pkgs.linux_latest;
-  boot.blacklistedKernelModules = [ "snd_hda_intel" "snd_soc_skl" ];
 
   # Enable nix-command and flakes
   nix = {

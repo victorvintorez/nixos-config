@@ -8,7 +8,6 @@
 			background = config.colorScheme.colors.base01;
 			foreground = config.colorScheme.colors.base05;
 			font = "Iosevka Nerd Font";
-			simplefox.enable = true;
 			darkreader.enable = true;
 		};
 		search = {

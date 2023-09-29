@@ -5,10 +5,10 @@
     ./platform
     ./rofi
 	  ./vscode
+    ./swww
     ./gtklock.nix
   	./kitty.nix
 	  ./schizofox.nix
-    ./swww.nix
   ] ++ (builtins.attrValues outputs.modules);
 
   home.packages = with pkgs; [
@@ -22,5 +22,6 @@
     libnotify
     xdg-utils
     inotify-tools
+    libreoffice
   ];
 }

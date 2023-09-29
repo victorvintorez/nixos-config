@@ -18,6 +18,11 @@
     homeDirectory = lib.mkForce "/home/victorvintorez";
   };
 
+  # Enable default xdg dirs
+  xdg = {
+    enable = true;
+  };
+
   # Restart services
   systemd = {
     user = {

@@ -1,7 +1,5 @@
-{ config, pkgs, inputs, ... }: {
-    imports = [ inputs.nix-colors.homeManagerModules.default ];
-
-    colorScheme = {
+{ config, pkgs, inputs, ... }: let 
+    oledppuccin = {
         slug = "oledppuccin";
         name = "Oledppuccin";
         author = "Victor Vintorez (Based on Catppuccin -> https://github.com/catppuccin)";
@@ -24,4 +22,8 @@
             base0F = "F2CDCD"; # Flamingo
         };
     };
+in {
+    imports = [ inputs.nix-colors.homeManagerModules.default ];
+
+    colorScheme = inputs.nix-colors.colorSchemes.catppuccin-mocha;
 }

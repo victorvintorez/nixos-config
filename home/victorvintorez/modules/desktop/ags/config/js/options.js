@@ -7,7 +7,7 @@ export default {
 
     battaryBar: {
         // wether to show percentage by deafult
-        showPercentage: true,
+        showPercentage: false,
 
         // at what percentages should the battery-bar change color
         low: 30,

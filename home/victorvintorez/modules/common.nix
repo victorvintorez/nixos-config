@@ -21,10 +21,6 @@
   # Enable default xdg dirs
   xdg = {
     enable = true;
-    cacheHome = "~/.cache";
-    configHome = "~/.config";
-    dataHome = "~/.local/share";
-    stateHome = "~/.local/state";
     userDirs = {
       enable = true;
       createDirectories = true;

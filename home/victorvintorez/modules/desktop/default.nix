@@ -4,12 +4,14 @@
     ./hyprland
     ./platform
     ./rofi
-	  ./vscode
+	./vscode
     ./swww
     ./gtklock.nix
-  	./kitty.nix
-	  ./schizofox.nix
-    ./university.nix
+	./kitty.nix
+	./mpv.nix
+	./photoqt.nix
+	./schizofox.nix
+	./thunderbird.nix
   ] ++ (builtins.attrValues outputs.modules);
 
   home.packages = with pkgs; [

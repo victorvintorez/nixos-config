@@ -5,12 +5,11 @@
     settings = {
       format =
         let
-          git = "$git_branch$git_commit$git_state$git_status";
+          git = "[](fg:#DA627D bg:#FCA17D)$git_branch$git_commit$git_state$git_status";
         in
         ''
-          $username$hostname($shlvl)
-          $directory(${git}) $fill $time
-          $jobs$character
+          [](#9A348E)$username$hostname[](bg:#DA627D fg:#9A348E)$directory(${git}) $fill $time
+          [](fg:#86BBD8 bg:#06969A)$direnv[](fg:#06969A bg:#33658A)$bun$c$dart$deno$dotnet$golang$gradle$java$kotlin$lua$nodejs$python$r$rust$zig[ ](fg:#33658A)$sudo$character
         '';
 
       fill = {
@@ -29,14 +28,6 @@
         style = "bold green";
       };
 
-      shlvl = {
-        format = "[$shlvl]($style)";
-        style = "bold cyan";
-        threshold = 2;
-        repeat = true;
-        disabled = false;
-      };
-
       directory = {
         format = "[$path]($style)( [$read_only]($read_only_style)) ";
       };
@@ -46,9 +37,26 @@
         disabled = false;
       };
 
+      sudo = {
+        disabled = false;
+        format = "[$symbol]($style)";
+        symbol = "󱑷 ";
+        style = "red";
+      };
+
       character = {
         error_symbol = "[~~>](bold red)";
         success_symbol = "[->>](bold green)";
+      };
+
+      custom = {
+        direnv = {
+            command = ''[[ $(direnv status) =~ "Found RC allowed false" ]] && echo "=========> missing: direnv allow <============"'';
+            detect_files = [ ".envrc" ];
+            format = "[$symbol($output)]($style)";
+            symbol = "󱄅 ";
+            style = "bold blue";
+        };
       };
     };
   };

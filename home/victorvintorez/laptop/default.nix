@@ -4,6 +4,7 @@
   imports = [
     ../modules/common.nix
     ./monitors.nix
+    ../modules/desktop/university.nix
   ];
 
   # Add stuff for your user as you see fit:

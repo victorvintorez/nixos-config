@@ -11,7 +11,7 @@
 	./mpv.nix
 	./photoqt.nix
 	./schizofox.nix
-	./thunderbird.nix
+#	./thunderbird.nix
   ] ++ (builtins.attrValues outputs.modules);
 
   home.packages = with pkgs; [

@@ -6,6 +6,8 @@
 
 	programs.schizofox = {
 		enable = true;
+
+		package = pkgs.firefox-wayland;
 		theme = {
 			background-darker = config.colorScheme.colors.base00;
 			background = config.colorScheme.colors.base01;

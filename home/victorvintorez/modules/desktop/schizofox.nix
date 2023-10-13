@@ -54,7 +54,7 @@
 			extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
 				bitwarden
 				ublock-origin
-				languagetool
+				#languagetool
 				wappalyzer
 			];
 			arkenfox = {

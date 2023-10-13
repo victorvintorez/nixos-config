@@ -20,7 +20,7 @@
 			catppuccin.catppuccin-vsc
 			vscode-icons-team.vscode-icons
 			vscodevim.vim
-			mkhl.vscode-direnv
+			mkhl.direnv
 		];
 	};
 

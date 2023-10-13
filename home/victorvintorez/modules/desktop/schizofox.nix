@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }: {
 	imports = [ 
 		inputs.schizofox.homeManagerModule
-		inputs.arkenfox
+		inputs.arkenfox-nixos.hmModules.arkenfox
 	];
 
 	programs.schizofox = {

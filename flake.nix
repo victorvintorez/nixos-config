@@ -66,7 +66,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    arkenfox = {
+    arkenfox-nixos = {
       url = "github:dwarfmaster/arkenfox-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
     };

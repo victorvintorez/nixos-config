@@ -3,5 +3,6 @@
     libreoffice
     drawio
     obsidian
+    jetbrains-toolbox
   ];
 }

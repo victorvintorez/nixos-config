@@ -1,5 +1,8 @@
 { config, pkgs, inputs, ... }: {
-	imports = [ inputs.schizofox.homeManagerModule ];
+	imports = [ 
+		inputs.schizofox.homeManagerModule
+		inputs.arkenfox.default
+	];
 
 	programs.schizofox = {
 		enable = true;

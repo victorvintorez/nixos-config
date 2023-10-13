@@ -7,7 +7,6 @@
 	programs.schizofox = {
 		enable = true;
 
-		package = pkgs.firefox-bin;
 		theme = {
 			background-darker = config.colorScheme.colors.base00;
 			background = config.colorScheme.colors.base01;
@@ -43,7 +42,8 @@
 
 	programs.firefox = {
 		enable = true;
-
+		package = pkgs.firefox-wayland;
+		
 		arkenfox = {
 			enable = true;
 			version = "103.0";

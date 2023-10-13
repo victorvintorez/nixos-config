@@ -10,15 +10,6 @@
   # Add stuff for your user as you see fit:
   #programs.neovim.enable = true;
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-             "languagetool"
-           ];
-    };
-  };
-
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "23.05";
 }

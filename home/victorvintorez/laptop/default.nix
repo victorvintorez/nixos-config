@@ -13,7 +13,9 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
-      allowUnfreePredicate = _: true;
+      allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
+             "languagetool"
+           ];
     };
   };
 

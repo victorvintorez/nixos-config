@@ -21,4 +21,8 @@
 			vscode-icons-team.vscode-icons
 		];
 	};
+
+	home.packages = with pkgs; [
+		nixfmt
+	];
 }

@@ -58,7 +58,7 @@ const Applauncher = ({ windowName = 'applauncher' } = {}) => {
             }
         },
         onChange: ({ text }) => {
-            list.children = Applications.query(text).map(app => [
+            list.children = Applications.query(text).sort((a, b) => a.name.localeCompare(b.name)).map(app => [
                 Separator(),
                 AppItem(app, windowName),
             ]).flat();

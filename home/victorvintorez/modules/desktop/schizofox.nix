@@ -50,7 +50,7 @@
 		profiles.Default = {
 			bookmarks = {};
 			extensions = with inputs.firefox-addons.packages; [
-				bitwarden
+				bitwarden-password-manager
 				ublock-origin
 				languagetool
 				wappalyzer

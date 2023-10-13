@@ -49,7 +49,7 @@
 
 		profiles.Default = {
 			bookmarks = {};
-			extensions = with pkgs.inputs.firefox-addons; [
+			extensions = with inputs.firefox-addons; [
 				bitwarden
 				ublock-origin
 				languagetool

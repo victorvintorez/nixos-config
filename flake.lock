@@ -20,7 +20,7 @@
         "type": "github"
       }
     },
-    "arkenfox": {
+    "arkenfox-nixos": {
       "inputs": {
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
@@ -288,7 +288,7 @@
     "gitignore": {
       "inputs": {
         "nixpkgs": [
-          "arkenfox",
+          "arkenfox-nixos",
           "pre-commit",
           "nixpkgs"
         ]
@@ -808,7 +808,7 @@
     "root": {
       "inputs": {
         "ags": "ags",
-        "arkenfox": "arkenfox",
+        "arkenfox-nixos": "arkenfox-nixos",
         "firefox-addons": "firefox-addons",
         "hardware": "hardware",
         "home-manager": "home-manager",

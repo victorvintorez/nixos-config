@@ -43,7 +43,7 @@
 	programs.firefox = {
 		enable = true;
 		package = pkgs.firefox-wayland;
-		
+
 		arkenfox = {
 			enable = true;
 			version = "103.0";
@@ -51,7 +51,7 @@
 
 		profiles.Default = {
 			bookmarks = {};
-			extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+			extensions = with inputs.firefox-addons.packages.${pkgs.system} { config.allowUnfree = true; }; [
 				bitwarden
 				ublock-origin
 				languagetool

@@ -49,8 +49,8 @@
 
 		profiles.Default = {
 			bookmarks = {};
-			extensions = with inputs.firefox-addons.packages; [
-				bitwarden-password-manager
+			extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+				bitwarden
 				ublock-origin
 				languagetool
 				wappalyzer

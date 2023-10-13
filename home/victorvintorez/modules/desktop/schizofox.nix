@@ -55,7 +55,7 @@
 				bitwarden
 				ublock-origin
 				#languagetool
-				wappalyzer
+				#wappalyzer
 			];
 			arkenfox = {
 				enable = true;

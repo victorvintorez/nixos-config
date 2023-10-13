@@ -75,18 +75,22 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let
       inherit (self) outputs;
-      lib = nixpkgs.lib // home-manager.lib;
-      pkgsFor = nixpkgs.legacyPackages;
-    in
-    {
-      inherit lib;
+      legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-linux" ] (system:
+        import inputs.nixpkgs {
+          inherit system;
+          config.allowUnfree = true;
+          config.allowUnfreePredicate = _: true;
+      });
+    in {
+      inherit legacyPackages;
       modules = import ./modules;
       
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         # Desktop
-        desktop = lib.nixosSystem {
+        desktop = nixpkgs.lib.nixosSystem {
+          pkgs = legacyPackages.x86_64-linux;
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/desktop
@@ -94,7 +98,7 @@
         };
 
         # TODO - Laptop
-        laptop = lib.nixosSystem {
+        laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/laptop

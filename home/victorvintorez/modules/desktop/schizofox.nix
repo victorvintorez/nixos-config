@@ -51,7 +51,7 @@
 
 		profiles.Default = {
 			bookmarks = {};
-			extensions = with inputs.firefox-addons.packages.${pkgs.system} { config.allowUnfree = true; }; [
+			extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
 				bitwarden
 				ublock-origin
 				languagetool

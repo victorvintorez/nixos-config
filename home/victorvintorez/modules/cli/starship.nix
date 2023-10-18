@@ -5,16 +5,20 @@
     settings = {
       format =
         let
-          git = "[](fg:#DA627D bg:#FCA17D)$git_branch$git_commit$git_state$git_status";
+          git = "[](fg:#${config.colorScheme.colors.base07} bg:#FCA17D)$git_branch$git_commit$git_state$git_status[](fg:#FCA17D bg:#FCA17D)";
         in
         ''
-          [](#9A348E)$username$hostname[](bg:#DA627D fg:#9A348E)$directory(${git}) $fill $time
+          [](#${config.colorScheme.colors.base06})$username$hostname[](bg:#${config.colorScheme.colors.base07} fg:#${config.colorScheme.colors.base06})$directory(${git}) $fill $time
           [](fg:#86BBD8 bg:#06969A)$direnv[](fg:#06969A bg:#33658A)$bun$c$dart$deno$dotnet$golang$gradle$java$kotlin$lua$nodejs$python$r$rust$zig[ ](fg:#33658A)$sudo$character
         '';
 
       fill = {
         symbol = " ";
         disabled = false;
+      };
+
+      git_branch = {
+        style = "fg:#FCA17D bg:#FCA17D";
       };
 
       username = {
@@ -30,6 +34,8 @@
 
       directory = {
         format = "[$path]($style)( [$read_only]($read_only_style)) ";
+        style = "fg:#${config.colorScheme.colors.base05} bg:#${config.colorScheme.colors.base07}";
+        read_only_style = "fg:# bg:#";
       };
 
       time = {

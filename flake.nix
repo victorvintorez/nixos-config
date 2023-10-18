@@ -70,6 +70,11 @@
       url = "github:dwarfmaster/arkenfox-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Spicetify (Spotify wrapper)
+    spicetify-nix = {
+      url = "github:the-argus/spicetify-nix";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 

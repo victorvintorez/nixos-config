@@ -23,20 +23,20 @@
 
       username = {
         format = "[$user]($style)";
-        style_user = "fg:#${config.colorScheme.colors.base00} bg:${config.colorScheme.colors.base06}";
+        style_user = "fg:#${config.colorScheme.colors.base00} bg:#${config.colorScheme.colors.base06}";
         show_always = true;
       };
 
       hostname = {
         format = "[@$hostname]($style) ";
         ssh_only = false;
-        style = "fg:#${config.colorScheme.colors.base00} bg:${config.colorScheme.colors.base06}";
+        style = "fg:#${config.colorScheme.colors.base00} bg:#${config.colorScheme.colors.base06}";
       };
 
       directory = {
         format = "[$path]($style)( [$read_only]($read_only_style)) ";
         style = "fg:#${config.colorScheme.colors.base00} bg:#${config.colorScheme.colors.base07}";
-        read_only_style = "fg:bold red bg:#${config.colorScheme.colors.base07}";
+        read_only_style = "fg:red bg:#${config.colorScheme.colors.base07}";
       };
 
       time = {

@@ -28,7 +28,7 @@
       };
 
       hostname = {
-        format = "[@$hostname]($style) ";
+        format = "[@$hostname ]($style)";
         ssh_only = false;
         style = "fg:#${config.colorScheme.colors.base00} bg:#${config.colorScheme.colors.base06}";
       };

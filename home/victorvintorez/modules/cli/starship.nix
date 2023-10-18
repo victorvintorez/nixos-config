@@ -34,7 +34,7 @@
       };
 
       directory = {
-        format = "[$path]($style)( [$read_only]($read_only_style)) ";
+        format = "[$path]($style)([ $read_only]($read_only_style)) ";
         style = "fg:#${config.colorScheme.colors.base00} bg:#${config.colorScheme.colors.base07}";
         read_only_style = "fg:red bg:#${config.colorScheme.colors.base07}";
       };

@@ -54,7 +54,6 @@ const End = () => Widget.Box({
     className: 'end',
     children: [
         SeparatorDot(Mpris, m => m.players.length > 0),
-        MediaIndicator(),
         Widget.Box({ hexpand: true }),
 
         SubMenu({

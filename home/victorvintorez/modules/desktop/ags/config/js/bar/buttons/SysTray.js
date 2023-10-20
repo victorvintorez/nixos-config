@@ -19,7 +19,7 @@ const SysTrayItem = item => PanelButton({
 
 const systray = Widget.Box({
     connections: [[SystemTray, box => {
-        box.children = SystemTray.items.map(SysTrayItem);
+        box.children = SystemTray.items.map(item => SysTrayItem(item));
     }]],
 });
 

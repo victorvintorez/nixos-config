@@ -1,7 +1,8 @@
 import icons from '../icons.js';
 import Separator from '../misc/Separator.js';
-const { timeout } = ags.Utils;
-const { Box, Button, Icon, Revealer } = ags.Widget;
+import { App, Utils, Widget } from '../imports.js'
+const { timeout } = Utils;
+const { Box, Button, Icon, Revealer } = Widget;
 
 export const opened = ags.Variable('');
 App.connect('window-toggled', (_, name, visible) => {

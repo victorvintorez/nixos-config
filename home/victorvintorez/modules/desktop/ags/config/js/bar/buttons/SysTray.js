@@ -1,5 +1,6 @@
 import PanelButton from '../PanelButton.js';
 import { SystemTray, Widget } from '../../imports.js';
+import Gdk from 'gi://Gdk';
 
 const SysTrayItem = item => PanelButton({
     content: Widget.Icon({ binds: [['icon', item, 'icon']] }),
@@ -13,14 +14,12 @@ const SysTrayItem = item => PanelButton({
             menu.disconnect(id);
         });
     },
-    onPrimaryClick: (_, event) => item.activate(event),
-    onSecondaryClick: (_, event) => item.openMenu(event),
+    onPrimaryClick: btn =>
+        item.menu.popup_at_widget(btn, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null),
+    onSecondaryClick: btn =>
+        item.menu.popup_at_widget(btn, Gdk.Gravity.SOUTH, Gdk.Gravity.NORTH, null),
 });
 
-const systray = Widget.Box({
-    connections: [[SystemTray, box => {
-        box.children = SystemTray.items.map(item => SysTrayItem(item));
-    }]],
+export default () => Widget.Box({
+    binds: [['children', SystemTray, 'items', i => i.map(SysTrayItem)]],
 });
-
-export default systray;

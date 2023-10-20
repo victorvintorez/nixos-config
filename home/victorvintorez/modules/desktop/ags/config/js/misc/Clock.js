@@ -1,6 +1,6 @@
 import { Widget } from '../imports.js'
 const { Label } = Widget;
-const { DateTime } = gi.GLib;
+import GLib from 'gi://GLib';
 
 export default ({
     format = '%H:%M:%S %B %e. %A',
@@ -10,6 +10,6 @@ export default ({
     className: 'clock',
     ...props,
     connections: [[interval, label =>
-        label.label = DateTime.new_now_local().format(format),
+        label.label = GLib.DateTime.new_now_local().format(format),
     ]],
 });

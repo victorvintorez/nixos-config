@@ -14,10 +14,12 @@ import { SystemTray, Widget, Variable } from '../imports.js';
 import { Notifications, Mpris, Battery } from '../imports.js';
 import Recorder from '../services/screenrecord.js';
 
+/*
 const submenuItems = Variable(1);
 SystemTray.connect('changed', () => {
     submenuItems.setValue(SystemTray.items.length + 1);
 });
+*/
 
 const SeparatorDot = (service, condition) => Separator({
     orientation: 'vertical',

@@ -89,10 +89,12 @@
   ];
 
   # SSH Server
-  services.openssh = {
-    enable = true;
-    settings.PasswordAuthentication = false;
-    settings.KbdInteractiveAuthentication = false;
+  services = {
+    openssh = {
+      enable = true;
+      settings.PasswordAuthentication = false;
+      settings.KbdInteractiveAuthentication = false;
+    };
   };
 
   # Home-manager defaults

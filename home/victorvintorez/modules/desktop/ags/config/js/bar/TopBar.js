@@ -14,7 +14,10 @@ const { Window, CenterBox, Box } = ags.Widget;
 import { SystemTray } from '../imports.js';
 
 const submenuItems = ags.Variable(1);
-SystemTray.connect('changed', () => {
+SystemTray.connect('added', () => {
+    submenuItems.setValue(SystemTray.items.length + 1);
+});
+SystemTray.connect('removed', () => {
     submenuItems.setValue(SystemTray.items.length + 1);
 });
 

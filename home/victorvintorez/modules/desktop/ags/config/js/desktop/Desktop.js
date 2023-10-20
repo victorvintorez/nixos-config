@@ -5,7 +5,7 @@ import Clock from '../misc/Clock.js';
 import icons from '../icons.js';
 import { App, Widget } from '../imports.js'
 const openWindow = App.openWindow;
-const { MenuItem, Menu, Box, Label, Icon, EventBox, CenterBox, Window, Widget } = Widget;
+const { MenuItem, Menu, Box, Label, Icon, EventBox, CenterBox, Window } = Widget;
 
 const Item = (label, icon, onActivate) => MenuItem({
     onActivate,

@@ -2,9 +2,10 @@ import Cairo from 'cairo';
 import options from './options.js';
 import icons from './icons.js';
 import Theme from './services/theme/theme.js';
+import { Hyprland } from './imports.js';
 
 export function forMonitors(widget) {
-    const ws = ags.Service.Hyprland.HyprctlGet('monitors');
+    const ws = Hyprland.HyprctlGet('monitors');
     return ws.map(mon => widget(mon.id));
 }
 

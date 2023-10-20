@@ -33,7 +33,7 @@ const NotificationList = () => Box({
     vertical: true,
     vexpand: true,
     connections: [[Notifications, box => {
-        box.children = Notifications.notifications
+        box.children = Notifications.notifications && Notifications.notifications
             .reverse()
             .map(n => Notification(n));
 

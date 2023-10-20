@@ -60,7 +60,6 @@ const End = () => Widget.Box({
             items: submenuItems,
             children: [
                 SysTray(),
-                ColorPicker(),
             ],
         }),
         SeparatorDot(),

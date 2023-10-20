@@ -27,7 +27,7 @@ export function createSurfaceFromWidget(widget) {
 }
 
 export function warnOnLowBattery() {
-    Battery.instance.connect('changed', () => {
+    Battery.connect('changed', () => {
         const { low } = options.battaryBar;
         if (Battery.percentage < low || Battery.percentage < low / 2) {
             Utils.execAsync([

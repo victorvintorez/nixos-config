@@ -10,7 +10,9 @@
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.default;
     enableNvidiaPatches = true;
-    systemdIntegration = true;
+    systemd = {
+      enable = true;
+    };
     xwayland = {
 			enable = true;
     };

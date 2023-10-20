@@ -25,5 +25,6 @@
     libnotify
     xdg-utils
     inotify-tools
+    gnome.file-roller
   ];
 }

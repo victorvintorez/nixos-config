@@ -5,8 +5,9 @@ import Theme from './services/theme/theme.js';
 import { Hyprland, App, Battery, Utils } from './imports.js';
 
 export function forMonitors(widget) {
-    const monitors = Hyprland.monitors;
-    return monitors.map(monitor => widget(monitor.id));
+    return widget(0)
+    //const monitors = Hyprland.monitors;
+    //return monitors.map(monitor => widget(monitor.id));
 }
 
 export function createSurfaceFromWidget(widget) {

@@ -58,7 +58,6 @@
     # Aylur's GTK Shell
     ags = {
       url = "github:Aylur/ags";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     firefox-addons = {

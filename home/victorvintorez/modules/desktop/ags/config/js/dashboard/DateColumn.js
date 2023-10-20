@@ -2,7 +2,7 @@ import icons from '../icons.js';
 import Clock from '../misc/Clock.js';
 import * as vars from '../variables.js';
 import { Widget } from '../imports.js'
-const { Box, Label, Widget, CircularProgress, Icon } = Widget;
+const { Box, Label, CircularProgress, Icon } = Widget;
 
 const SysProgress = (type, title, unit) => Box({
     className: `circular-progress-box ${type}`,

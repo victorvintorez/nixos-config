@@ -3,7 +3,7 @@ import Theme from '../services/theme/theme.js';
 import themes from '../themes.js';
 import Wallpaper from '../misc/Wallpaper.js';
 import { Widget, Service } from '../imports.js'
-const { Box, Stack, Label, Icon, Button, Scrollable, Entry, Widget } = Widget;
+const { Box, Stack, Label, Icon, Button, Scrollable, Entry } = Widget;
 
 const Row = (title, child) => Box({
     className: 'row',

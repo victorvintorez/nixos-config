@@ -2,9 +2,9 @@ import HoverRevealer from '../../misc/HoverRevealer.js';
 import PanelButton from '../PanelButton.js';
 import Indicator from '../../services/onScreenIndicator.js';
 import icons from '../../icons.js';
-const { App } = ags;
-import { Bluetooth, Audio, Notifications, Network } from '../../imports.js';
-const { Box, Label, Icon, Stack } = ags.Widget;
+import { App } from '../../imports.js';
+import { Bluetooth, Audio, Notifications, Network, Widget } from '../../imports.js';
+const { Box, Label, Icon, Stack } = Widget;
 
 const MicrophoneMuteIndicator = () => Icon({
     icon: icons.audio.mic.muted,

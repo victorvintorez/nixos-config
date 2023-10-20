@@ -1,6 +1,6 @@
-import { Hyprland } from '../../imports.js';
-const { Box, Button, EventBox, Label } = ags.Widget;
-const { execAsync } = ags.Utils;
+import { Hyprland, Widget, Utils } from '../../imports.js';
+const { Box, Button, EventBox, Label } = Widget;
+const { execAsync } = Utils;
 import options from '../../options.js';
 
 export default ({ workspaces = options.workspaces } = {}) => Box({

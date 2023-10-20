@@ -1,9 +1,8 @@
 import Separator from '../misc/Separator.js';
 import PopupWindow from '../misc/PopupWindow.js';
 import icons from '../icons.js';
-const { App } = ags;
-import { Applications } from '../imports.js'
-const { Label, Box, Icon, Button, Scrollable, Entry } = ags.Widget;
+import { Applications, App, Widget } from '../imports.js'
+const { Label, Box, Icon, Button, Scrollable, Entry } = Widget;
 
 const AppItem = (app, window) => Button({
     className: 'app',

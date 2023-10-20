@@ -1,6 +1,6 @@
 import HoverRevealer from '../../misc/HoverRevealer.js';
-const { Label, Icon } = ags.Widget;
-import { Notifications } from '../../imports.js';
+const { Label, Icon } = Widget;
+import { Notifications, App } from '../../imports.js';
 
 export default ({ direction = 'left' } = {}) => HoverRevealer({
     className: 'notifications panel-button',
@@ -9,7 +9,7 @@ export default ({ direction = 'left' } = {}) => HoverRevealer({
             box.visible =
                 Notifications.notifications.length > 0 || Notifications.dnd;
         }],
-        ['button-press-event', () => ags.App.openWindow('dashboard')],
+        ['button-press-event', () => App.openWindow('dashboard')],
     ],
     connections: [[Notifications, revealer => {
         const title = Notifications.notifications[0]?.summary;
@@ -18,7 +18,7 @@ export default ({ direction = 'left' } = {}) => HoverRevealer({
 
         revealer._title = title;
         revealer.revealChild = true;
-        ags.Utils.timeout(3000, () => {
+        Utils.timeout(3000, () => {
             revealer.revealChild = false;
         });
     }]],

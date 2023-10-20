@@ -1,6 +1,7 @@
 import icons from '../../icons.js';
 import PanelButton from '../PanelButton.js';
-const { Icon, Box, Revealer } = ags.Widget;
+import { Widget, Variable, Utils } from '../../imports.js'
+const { Icon, Box, Revealer } = Widget;
 
 const Arrow = (revealer, direction, items) => PanelButton({
     className: 'sub-menu',
@@ -20,7 +21,7 @@ const Arrow = (revealer, direction, items) => PanelButton({
             ['animate', icon => {
                 const step = revealer.revealChild ? 10 : -10;
                 for (let i = 0; i < 18; ++i) {
-                    ags.Utils.timeout(2 * i, () => {
+                    Utils.timeout(2 * i, () => {
                         icon._deg += step;
                         icon.setStyle(`-gtk-icon-transform: rotate(${icon._deg}deg);`);
                     });
@@ -30,7 +31,7 @@ const Arrow = (revealer, direction, items) => PanelButton({
     }),
 });
 
-export default ({ children, direction = 'left', items = ags.Variable(0) }) => {
+export default ({ children, direction = 'left', items = Variable(0) }) => {
     const posStart = direction === 'up' || direction === 'left';
     const posEnd = direction === 'down' || direction === 'right';
     const revealer = Revealer({

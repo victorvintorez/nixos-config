@@ -1,8 +1,7 @@
 import PanelButton from '../PanelButton.js';
-
-import { Hyprland } from '../../imports.js';
-const { lookUpIcon } = ags.Utils;
-const { Box, Label, Icon } = ags.Widget;
+import { Hyprland, Utils, Widget } from '../../imports.js';
+const { lookUpIcon } = Utils;
+const { Box, Label, Icon } = Widget;
 
 export const ClientLabel = substitutes => Label({
     connections: [[Hyprland, label => {

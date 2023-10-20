@@ -10,10 +10,10 @@ import Separator from '../misc/Separator.js';
 import ScreenRecord from './buttons/ScreenRecord.js';
 import BatteryBar from './buttons/BatteryBar.js';
 import SubMenu from './buttons/SubMenu.js';
-const { Window, CenterBox, Box } = ags.Widget;
-import { SystemTray } from '../imports.js';
+import { SystemTray, Widget, Service, Variable } from '../imports.js';
+const { Window, CenterBox, Box } = Widget;
 
-const submenuItems = ags.Variable(1);
+const submenuItems = Variable(1);
 SystemTray.connect('added', () => {
     submenuItems.setValue(SystemTray.items.length + 1);
 });
@@ -24,8 +24,8 @@ SystemTray.connect('removed', () => {
 const SeparatorDot = (service, condition) => Separator({
     orientation: 'vertical',
     valign: 'center',
-    connections: service && [[ags.Service[service], dot => {
-        dot.visible = condition(ags.Service[service]);
+    connections: service && [[Service[service], dot => {
+        dot.visible = condition(Service[service]);
     }]],
 });
 

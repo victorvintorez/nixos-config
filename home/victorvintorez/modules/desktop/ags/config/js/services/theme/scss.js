@@ -1,4 +1,5 @@
-const { exec, writeFile, ensureDirectory } = ags.Utils;
+import { App, Utils } from '../../imports.js'
+const { exec, writeFile, ensureDirectory } = Utils;
 
 const generated = str => `// THIS FILE IS GENERATED
 ${str}`;
@@ -59,9 +60,9 @@ export default async function(theme) {
     try {
         await writeFile(generated(scss(theme)), `${tmp}/generated.scss`);
         await writeFile(generated(theme.additional_scss || ''), `${tmp}/additional.scss`);
-        exec(`sass ${ags.App.configDir}/scss/main.scss ${tmp}/style.css`);
-        ags.App.resetCss();
-        ags.App.applyCss(`${tmp}/style.css`);
+        exec(`sass ${App.configDir}/scss/main.scss ${tmp}/style.css`);
+        App.resetCss();
+        App.applyCss(`${tmp}/style.css`);
     } catch (error) {
         console.error(error);
     }

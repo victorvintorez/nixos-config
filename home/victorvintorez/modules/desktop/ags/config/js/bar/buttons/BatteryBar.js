@@ -2,8 +2,8 @@ import icons from '../../icons.js';
 import FontIcon from '../../misc/FontIcon.js';
 import options from '../../options.js';
 import PanelButton from '../PanelButton.js';
-import {Battery} from '../../imports.js';
-const { Widget, Box, Stack, Icon, Revealer, Label } = ags.Widget;
+import {Battery, Widget} from '../../imports.js';
+const { Widget, Box, Stack, Icon, Revealer, Label } = Widget;
 
 const Indicator = () => Stack({
     items: [

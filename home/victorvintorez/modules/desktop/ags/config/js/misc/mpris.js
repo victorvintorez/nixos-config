@@ -1,6 +1,7 @@
 import icons from '../icons.js';
-const { CACHE_DIR, execAsync, ensureDirectory, lookUpIcon } = ags.Utils;
-const { Button, Icon, Label, Box, Stack, Slider } = ags.Widget;
+import { Utils, Widget } from '../imports.js'
+const { CACHE_DIR, execAsync, ensureDirectory, lookUpIcon } = Utils;
+const { Button, Icon, Label, Box, Stack, Slider } = Widget;
 const { GLib } = imports.gi;
 
 const MEDIA_CACHE_PATH = CACHE_DIR + '/media';

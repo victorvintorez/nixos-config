@@ -4,7 +4,7 @@ const { timeout } = ags.Utils;
 const { Box, Button, Icon, Revealer } = ags.Widget;
 
 export const opened = ags.Variable('');
-ags.App.instance.connect('window-toggled', (_, name, visible) => {
+App.connect('window-toggled', (_, name, visible) => {
     if (name === 'quicksettings' && !visible)
         timeout(500, () => opened.value = '');
 });

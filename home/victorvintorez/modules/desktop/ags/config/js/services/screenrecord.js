@@ -1,5 +1,5 @@
-const { Service } = ags;
-const { execAsync, interval, ensureDirectory } = ags.Utils;
+import { Service, App, Utils } from '../imports.js';
+const { execAsync, interval, ensureDirectory } = Utils;
 const { GLib } = imports.gi;
 const now = () => GLib.DateTime.new_now_local().format('%Y-%m-%d_%H-%M-%S');
 
@@ -90,7 +90,7 @@ class RecorderService extends Service {
             if (res === 'edit')
                 execAsync(['swappy', '-f', file]);
 
-            ags.App.closeWindow('dashboard');
+            App.closeWindow('dashboard');
         } catch (error) {
             console.error(error);
         }

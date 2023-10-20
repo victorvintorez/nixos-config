@@ -1,7 +1,8 @@
 import PanelButton from '../PanelButton.js';
 import Recorder from '../../services/screenrecord.js';
 import icons from '../../icons.js';
-const { Box, Icon, Label } = ags.Widget;
+import { Widget } from '../../imports.js'
+const { Box, Icon, Label } = Widget;
 
 export default () => PanelButton({
     className: 'recorder',

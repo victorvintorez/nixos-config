@@ -1,7 +1,8 @@
 import icons from '../icons.js';
 import Notification from '../misc/Notification.js';
-const { Notifications } = ags.Service;
-const { Button, Label, Box, Icon, Scrollable } = ags.Widget;
+import { Service, Widget } from '../imports.js'
+const { Notifications } = Service;
+const { Button, Label, Box, Icon, Scrollable } = Widget;
 
 const ClearButton = () => Button({
     onClicked: Notifications.clear,

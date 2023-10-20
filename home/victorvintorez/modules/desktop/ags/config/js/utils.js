@@ -2,7 +2,7 @@ import Cairo from 'cairo';
 import options from './options.js';
 import icons from './icons.js';
 import Theme from './services/theme/theme.js';
-import { Hyprland } from './imports.js';
+import { Hyprland, App, Battery } from './imports.js';
 
 export function forMonitors(widget) {
     return widget(0)
@@ -27,11 +27,10 @@ export function createSurfaceFromWidget(widget) {
 }
 
 export function warnOnLowBattery() {
-    const { Battery } = ags.Service;
     Battery.instance.connect('changed', () => {
         const { low } = options.battaryBar;
         if (Battery.percentage < low || Battery.percentage < low / 2) {
-            ags.Utils.execAsync([
+            Utils.execAsync([
                 'notify-send',
                 `${Battery.percentage}% Battery Percentage`,
                 '-i', icons.battery.warning,
@@ -57,10 +56,10 @@ export function getAudioTypeIcon(icon) {
 }
 
 export function scssWatcher() {
-    return ags.Utils.subprocess([
+    return Utils.subprocess([
         'inotifywait',
         '--recursive',
         '--event', 'create,modify',
-        '-m', ags.App.configDir + '/scss',
+        '-m', App.configDir + '/scss',
     ], Theme.setup);
 }

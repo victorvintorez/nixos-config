@@ -1,4 +1,5 @@
-const { Box, EventBox, Revealer } = ags.Widget;
+import { Widget, Utils } from '../imports.js'
+const { Box, EventBox, Revealer } = Widget;
 
 export default ({
     indicator,
@@ -31,7 +32,7 @@ export default ({
                 return;
 
             revealer.revealChild = true;
-            ags.Utils.timeout(duration, () => open = true);
+            Utils.timeout(duration, () => open = true);
         },
         onHoverLost: () => {
             if (!open)

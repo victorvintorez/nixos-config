@@ -1,4 +1,4 @@
-const { App, Service } = ags;
+import { App, Service } from '../imports.js';
 
 export default class PowerMenu extends Service {
     static {

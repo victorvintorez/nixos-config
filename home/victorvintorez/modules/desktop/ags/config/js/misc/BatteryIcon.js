@@ -1,5 +1,6 @@
-const { Battery } = ags.Service;
-const { Icon } = ags.Widget;
+import { Service, Widget } from '../imports.js'
+const { Battery } = Service;
+const { Icon } = Widget;
 
 export default () => Icon({
     className: 'battery',

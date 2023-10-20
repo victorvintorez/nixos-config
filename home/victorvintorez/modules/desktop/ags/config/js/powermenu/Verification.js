@@ -1,6 +1,7 @@
 import PopupWindow from '../misc/PopupWindow.js';
 import PowerMenu from '../services/powermenu.js';
 const { Label, Box, Button } = ags.Widget;
+import { App } from '../imports.js'
 
 export default () => PopupWindow({
     name: 'verification',
@@ -23,7 +24,7 @@ export default () => PopupWindow({
                 children: [
                     Button({
                         child: Label('󰅖'),
-                        onClicked: () => ags.App.toggleWindow('verification'),
+                        onClicked: () => App.toggleWindow('verification'),
                     }),
                     Button({
                         child: Label('󰄬'),

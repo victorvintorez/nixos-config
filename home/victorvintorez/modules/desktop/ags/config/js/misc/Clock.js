@@ -1,5 +1,6 @@
-const { Label } = ags.Widget;
-const { DateTime } = imports.gi.GLib;
+import { Widget } from '../imports.js'
+const { Label } = Widget;
+const { DateTime } = gi.GLib;
 
 export default ({
     format = '%H:%M:%S %B %e. %A',

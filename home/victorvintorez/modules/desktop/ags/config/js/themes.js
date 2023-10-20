@@ -1,4 +1,6 @@
-const WP = `/home/${ags.Utils.USER}/.config/wallpapers/`;
+import { Utils } from './imports.js'
+
+const WP = `/home/${Utils.USER}/.config/wallpapers/`;
 
 const editScheme = (scheme, edit) => {
     const obj = {};

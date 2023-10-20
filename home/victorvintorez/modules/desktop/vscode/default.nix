@@ -21,8 +21,8 @@
 			vscode-icons-team.vscode-icons
 			vscodevim.vim
 			mkhl.direnv
-			ms-vscode.vscode-typescript-next
-			GitHub.copilot
+			github.copilot
+			github.copilot-chat
 		];
 	};
 

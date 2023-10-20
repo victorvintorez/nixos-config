@@ -2,7 +2,7 @@ import Cairo from 'cairo';
 import options from './options.js';
 import icons from './icons.js';
 import Theme from './services/theme/theme.js';
-import { Hyprland, App, Battery } from './imports.js';
+import { Hyprland, App, Battery, Utils } from './imports.js';
 
 export function forMonitors(widget) {
     return widget(0)

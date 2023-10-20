@@ -6,11 +6,12 @@
     ./rofi
 	./vscode
     ./swww
+    ./firefox.nix
     ./gtklock.nix
 	./kitty.nix
 	./mpv.nix
 	./photoqt.nix
-	./schizofox.nix
+	./spicetify.nix
 #	./thunderbird.nix
   ] ++ (builtins.attrValues outputs.modules);
 

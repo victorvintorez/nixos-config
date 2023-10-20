@@ -19,9 +19,9 @@ export default ({ workspaces = options.workspaces } = {}) => Box({
                         valign: 'center',
                     }),
                     connections: [[Hyprland, btn => {
-                        const occupied = Hyprland.getWorkspace(i)?.windows > 0;
+                        //const occupied = Hyprland.getWorkspace(i)?.windows > 0;
                         btn.toggleClassName('active', Hyprland.active.workspace.id === i);
-                        btn.toggleClassName('occupied', occupied);
+                        //btn.toggleClassName('occupied', occupied);
                     }]],
                 })),
             }),

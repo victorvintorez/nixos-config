@@ -3,7 +3,7 @@ import Workspaces from './buttons/Workspaces.js';
 import FocusedClient from './buttons/FocusedClient.js';
 import DateButton from './buttons/DateButton.js';
 import NotificationIndicator from './buttons/NotificationIndicator.js';
-import SysTray from './buttons/SysTray.js';
+//import SysTray from './buttons/SysTray.js';
 import SystemIndicators from './buttons/SystemIndicators.js';
 import PowerMenu from './buttons/PowerMenu.js';
 import Separator from '../misc/Separator.js';
@@ -59,7 +59,7 @@ const End = () => Box({
         SubMenu({
             items: submenuItems,
             children: [
-                SysTray(),
+                //SysTray(),
             ],
         }),
         SeparatorDot(),

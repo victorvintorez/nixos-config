@@ -1,7 +1,7 @@
 import options from '../options.js';
+import { App, Widget } from '../imports.js';
+const { EventBox, CenterBox, Box, Revealer, Window } = Widget;
 
-const { EventBox, CenterBox, Box, Revealer, Window } = ags.Widget;
-import { App } from ags;
 
 const Padding = windowName => EventBox({
     className: 'padding',

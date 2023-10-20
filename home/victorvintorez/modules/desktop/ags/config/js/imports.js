@@ -3,7 +3,6 @@ const require = async file => (await import(resource(file))).default;
 const service = async file => (await require(`service/${file}`)).instance;
 
 export const App = await require('app');
-App.connect(...args);
 
 export const Widget = await require('widget');
 export const Service = await require('service');

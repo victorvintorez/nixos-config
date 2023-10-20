@@ -5,10 +5,12 @@ const { timeout } = Utils;
 const { Box, Button, Icon, Revealer } = Widget;
 
 export const opened = Variable('');
+/*
 App.connect('window-toggled', (_, name, visible) => {
     if (name === 'quicksettings' && !visible)
         timeout(500, () => opened.value = '');
 });
+*/
 
 export const Arrow = (name, activate) => Button({
     child: Icon({

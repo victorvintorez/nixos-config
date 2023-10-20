@@ -3,7 +3,7 @@ import FontIcon from '../../misc/FontIcon.js';
 import options from '../../options.js';
 import PanelButton from '../PanelButton.js';
 import {Battery, Widget} from '../../imports.js';
-const { Widget, Box, Stack, Icon, Revealer, Label } = Widget;
+const { Box, Stack, Icon, Revealer, Label } = Widget;
 
 const Indicator = () => Stack({
     items: [

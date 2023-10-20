@@ -3,7 +3,7 @@ import PanelButton from '../PanelButton.js';
 import Indicator from '../../services/onScreenIndicator.js';
 import icons from '../../icons.js';
 const { App } = ags;
-const { Bluetooth, Audio, Notifications, Network } = ags.Service;
+import { Bluetooth, Audio, Notifications, Network } from '../../imports.js';
 const { Box, Label, Icon, Stack } = ags.Widget;
 
 const MicrophoneMuteIndicator = () => Icon({

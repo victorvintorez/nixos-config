@@ -2,7 +2,7 @@ import icons from '../../icons.js';
 import FontIcon from '../../misc/FontIcon.js';
 import options from '../../options.js';
 import PanelButton from '../PanelButton.js';
-const { Battery } = ags.Service;
+import {Battery} from '../../imports.js';
 const { Widget, Box, Stack, Icon, Revealer, Label } = ags.Widget;
 
 const Indicator = () => Stack({

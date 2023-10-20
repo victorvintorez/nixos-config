@@ -1,4 +1,4 @@
-const { Hyprland } = ags.Service;
+import { Hyprland } from '../../imports.js';
 const { Box, Button, EventBox, Label } = ags.Widget;
 const { execAsync } = ags.Utils;
 import options from '../../options.js';

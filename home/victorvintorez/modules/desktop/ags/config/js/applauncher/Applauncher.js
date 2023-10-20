@@ -2,7 +2,7 @@ import Separator from '../misc/Separator.js';
 import PopupWindow from '../misc/PopupWindow.js';
 import icons from '../icons.js';
 const { App } = ags;
-const { Applications } = ags.Service;
+import { Applications } from '../imports.js'
 const { Label, Box, Icon, Button, Scrollable, Entry } = ags.Widget;
 
 const AppItem = (app, window) => Button({

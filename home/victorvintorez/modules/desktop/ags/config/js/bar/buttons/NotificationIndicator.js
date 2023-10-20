@@ -1,6 +1,6 @@
 import HoverRevealer from '../../misc/HoverRevealer.js';
 const { Label, Icon } = ags.Widget;
-const { Notifications } = ags.Service;
+import { Notifications } from '../../imports.js';
 
 export default ({ direction = 'left' } = {}) => HoverRevealer({
     className: 'notifications panel-button',

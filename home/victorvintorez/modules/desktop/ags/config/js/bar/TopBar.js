@@ -11,7 +11,7 @@ import ScreenRecord from './buttons/ScreenRecord.js';
 import BatteryBar from './buttons/BatteryBar.js';
 import SubMenu from './buttons/SubMenu.js';
 const { Window, CenterBox, Box } = ags.Widget;
-const { SystemTray } = ags.Service;
+import { SystemTray } from '../imports.js';
 
 const submenuItems = ags.Variable(1);
 SystemTray.instance.connect('changed', () => {

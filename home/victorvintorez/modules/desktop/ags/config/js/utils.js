@@ -5,7 +5,7 @@ import Theme from './services/theme/theme.js';
 import { Hyprland } from './imports.js';
 
 export function forMonitors(widget) {
-    const ws = Hyprland.HyprctlGet('monitors');
+    const ws = Hyprland.monitors;
     return ws.map(mon => widget(mon.id));
 }
 

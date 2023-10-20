@@ -1,10 +1,10 @@
 import icons from '../icons.js';
 import Separator from '../misc/Separator.js';
-import { App, Utils, Widget } from '../imports.js'
+import { App, Utils, Widget, Variable } from '../imports.js'
 const { timeout } = Utils;
 const { Box, Button, Icon, Revealer } = Widget;
 
-export const opened = ags.Variable('');
+export const opened = Variable('');
 App.connect('window-toggled', (_, name, visible) => {
     if (name === 'quicksettings' && !visible)
         timeout(500, () => opened.value = '');

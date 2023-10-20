@@ -1,7 +1,7 @@
 import Notification from '../misc/Notification.js';
-const { Notifications } = ags.Service;
-const { Box, Revealer, Window } = ags.Widget;
-const { timeout } = ags.Utils;
+import { Notifications, Widget, Utils } from '../imports.js'
+const { Box, Revealer, Window } = Widget;
+const { timeout } = Utils;
 
 const Popups = () => Box({
     vertical: true,

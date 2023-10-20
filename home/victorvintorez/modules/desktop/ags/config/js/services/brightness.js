@@ -1,5 +1,5 @@
-const { Service } = ags;
-const { exec, execAsync } = ags.Utils;
+import { Service, Utils } from '../imports.js'
+const { exec, execAsync } = Utils;
 
 // Change this to whatever keyboard you have
 // you can check with brightnessctl --list

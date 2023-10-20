@@ -1,6 +1,7 @@
 import icons from '../../icons.js';
 import Brightness from '../../services/brightness.js';
-const { Slider, Box, Icon } = ags.Widget;
+import { Widget } from '../../imports.js'
+const { Slider, Box, Icon } = Widget;
 
 const BrightnessSlider = () => Slider({
     drawValue: false,

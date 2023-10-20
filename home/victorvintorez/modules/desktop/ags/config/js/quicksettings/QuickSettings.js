@@ -8,7 +8,8 @@ import Media from './widgets/Media.js';
 import Brightness from './widgets/Brightness.js';
 import DND from './widgets/DND.js';
 import MicMute from './widgets/MicMute.js';
-const { Box } = ags.Widget;
+import { Widget } from '../imports.js'
+const { Box } = Widget;
 
 const Row = (toggles, menus = []) => Box({
     className: 'row',

@@ -4,8 +4,8 @@ import Separator from '../../misc/Separator.js';
 import { getAudioTypeIcon } from '../../utils.js';
 import { Arrow } from '../ToggleButton.js';
 import { Menu } from '../ToggleButton.js';
-const { Audio } = ags.Service;
-const { Label, Icon, Box, Slider, Button } = ags.Widget;
+import { Audio, Widget, Utils } from '../../imports.js';
+const { Label, Icon, Box, Slider, Button } = Widget;
 
 const TypeIndicator = () => Button({
     onClicked: 'pactl set-sink-mute @DEFAULT_SINK@ toggle',
@@ -55,7 +55,7 @@ const MixerItem = stream => Box({
         Icon({
             binds: [['tooltipText', stream, 'name']],
             connections: [[stream, icon => {
-                icon.icon = ags.Utils.lookUpIcon(stream.name)
+                icon.icon = Utils.lookUpIcon(stream.name)
                     ? stream.name
                     : icons.mpris.fallback;
             }]],

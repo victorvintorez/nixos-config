@@ -1,7 +1,8 @@
 import icons from '../icons.js';
 import PowerMenu from '../services/powermenu.js';
 import PopupWindow from '../misc/PopupWindow.js';
-const { Box, Icon, Label, Button } = ags.Widget;
+import { Widget } from '../imports.js'
+const { Box, Icon, Label, Button } = Widget;
 
 const SysButton = (action, label) => Button({
     onClicked: () => PowerMenu.action(action),

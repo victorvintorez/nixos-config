@@ -1,5 +1,4 @@
-import { Service, Widget } from '../imports.js'
-const { Battery } = Service;
+import { Battery, Widget } from '../imports.js'
 const { Icon } = Widget;
 
 export default () => Icon({

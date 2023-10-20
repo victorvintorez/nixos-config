@@ -3,7 +3,8 @@ import { ArrowToggleButton, Menu, opened } from '../ToggleButton.js';
 import themes from '../../themes.js';
 import icons from '../../icons.js';
 import Separator from '../../misc/Separator.js';
-const { Stack, Label, Box, Button, Icon } = ags.Widget;
+import { Widget } from '../../imports.js'
+const { Stack, Label, Box, Button, Icon } = Widget;
 
 const prettyName = name => name
     .split('_')

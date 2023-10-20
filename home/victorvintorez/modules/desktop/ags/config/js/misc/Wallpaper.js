@@ -1,5 +1,6 @@
 import Theme from '../services/theme/theme.js';
-const { Box } = ags.Widget;
+import { Widget } from '../imports.js'
+const { Box } = Widget;
 
 export default ({ className, ...props }) => Box({
     ...props,

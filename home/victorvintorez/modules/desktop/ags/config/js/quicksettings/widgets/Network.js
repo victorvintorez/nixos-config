@@ -1,7 +1,7 @@
 import icons from '../../icons.js';
 import { Menu, ArrowToggleButton } from '../ToggleButton.js';
-const { Network } = ags.Service;
-const { Icon, Label, Box, Button } = ags.Widget;
+import { Network, Widget } from '../../imports.js'
+const { Icon, Label, Box, Button } = Widget;
 
 export const NetworkToggle = () => ArrowToggleButton({
     name: 'network',

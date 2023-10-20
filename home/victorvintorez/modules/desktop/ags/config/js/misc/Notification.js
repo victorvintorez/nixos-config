@@ -1,7 +1,7 @@
-const { GLib } = imports.gi;
-const { Notifications } = ags.Service;
-const { lookUpIcon, timeout } = ags.Utils;
-const { Box, Icon, Label, EventBox, Button, Revealer } = ags.Widget;
+import GLib from 'gi://GLib';
+import { Notifications, Utils, Widget, Variable } from '../imports.js'
+const { lookUpIcon, timeout } = Utils;
+const { Box, Icon, Label, EventBox, Button, Revealer } = Widget;
 
 const NotificationIcon = ({ appEntry, appIcon, image }) => {
     if (image) {
@@ -44,7 +44,7 @@ const NotificationIcon = ({ appEntry, appIcon, image }) => {
 };
 
 export default ({ id, summary, body, actions, urgency, time, ...icon }) => {
-    const hovered = ags.Variable(false);
+    const hovered = Variable(false);
 
     const hover = () => {
         hovered.value = true;

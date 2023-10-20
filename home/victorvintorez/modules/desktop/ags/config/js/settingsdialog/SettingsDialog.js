@@ -2,7 +2,8 @@ import Gtk from 'gi://Gtk';
 import Theme from '../services/theme/theme.js';
 import themes from '../themes.js';
 import Wallpaper from '../misc/Wallpaper.js';
-const { Box, Stack, Label, Icon, Button, Scrollable, Entry, Widget } = ags.Widget;
+import { Widget, Service } from '../imports.js'
+const { Box, Stack, Label, Icon, Button, Scrollable, Entry, Widget } = Widget;
 
 const Row = (title, child) => Box({
     className: 'row',
@@ -125,8 +126,8 @@ const TextSpinButton = (title, prop, list) => Row(title, Box({
     ],
 }));
 
-class Pages extends ags.Service {
-    static { ags.Service.register(this); }
+class Pages extends Service {
+    static { Service.register(this); }
     static instance = new Pages();
     static page = '󰒓 General';
     static show(page) {

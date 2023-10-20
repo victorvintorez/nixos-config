@@ -1,6 +1,6 @@
 import * as mpris from '../../misc/mpris.js';
-const { Mpris } = ags.Service;
-const { Box, CenterBox } = ags.Widget;
+import { Mpris, Widget } from '../../imports.js'
+const { Box, CenterBox } = Widget;
 
 const Footer = player => CenterBox({
     className: 'footer-box',

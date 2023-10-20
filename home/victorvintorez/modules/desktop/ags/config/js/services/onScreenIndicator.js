@@ -1,7 +1,7 @@
 import icons from '../icons.js';
 import { getAudioTypeIcon } from '../utils.js';
-const { Service } = ags;
-const { timeout, connect } = ags.Utils;
+import { Service, Utils } from '../imports.js';
+const { timeout, connect } = Utils;
 
 class IndicatorService extends Service {
     static {
@@ -26,22 +26,22 @@ class IndicatorService extends Service {
 
     speaker() {
         this.popup(
-            ags.Service.Audio.speaker.volume,
-            getAudioTypeIcon(ags.Service.Audio.speaker.iconName),
+            Service.Audio.speaker.volume,
+            getAudioTypeIcon(Service.Audio.speaker.iconName),
         );
     }
 
     display() {
         // brightness is async, so lets wait a bit
         timeout(10, () => this.popup(
-            ags.Service.Brightness.screen,
+            Service.Brightness.screen,
             icons.brightness.screen));
     }
 
     kbd() {
         // brightness is async, so lets wait a bit
         timeout(10, () => this.popup(
-            (ags.Service.Brightness.kbd * 33 + 1) / 100,
+            (Service.Brightness.kbd * 33 + 1) / 100,
             icons.brightness.keyboard));
     }
 

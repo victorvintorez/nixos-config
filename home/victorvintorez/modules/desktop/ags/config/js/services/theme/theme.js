@@ -1,8 +1,8 @@
 import themes from '../../themes.js';
 import setupScss from './scss.js';
 import { SettingsDialog } from '../../settingsdialog/SettingsDialog.js';
-const { Service } = ags;
-const { USER, exec, execAsync, readFile, writeFile, CACHE_DIR } = ags.Utils;
+import { Service, Utils } from '../../imports.js'
+const { USER, exec, execAsync, readFile, writeFile, CACHE_DIR } = Utils;
 const THEME_CACHE = CACHE_DIR + '/theme-overrides.json';
 
 class ThemeService extends Service {

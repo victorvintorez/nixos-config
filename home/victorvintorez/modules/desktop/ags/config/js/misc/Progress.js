@@ -1,4 +1,5 @@
-const { Box } = ags.Widget;
+import { Widget, Utils } from '../imports.js'
+const { Box } = Widget;
 
 export default ({
     height = 18,
@@ -44,7 +45,7 @@ export default ({
         const step = goal / frames;
 
         for (let i = 0; i < frames; ++i) {
-            ags.Utils.timeout(5 * i, () => {
+            Utils.timeout(5 * i, () => {
                 fill._size += step;
                 fill.setStyle(`min-${axis}: ${fill._size}px`);
             });

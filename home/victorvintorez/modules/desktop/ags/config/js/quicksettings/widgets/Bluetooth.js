@@ -1,8 +1,8 @@
 import icons from '../../icons.js';
 import Spinner from '../../misc/Spinner.js';
 import { Menu, ArrowToggleButton } from '../ToggleButton.js';
-const { Bluetooth } = ags.Service;
-const { Icon, Label, Box } = ags.Widget;
+import { Bluetooth, Widget } from '../../imports.js'
+const { Icon, Label, Box } = Widget;
 
 export const BluetoothToggle = () => ArrowToggleButton({
     name: 'bluetooth',
@@ -47,7 +47,7 @@ export const BluetoothDevices = () => Menu({
                     Label(device.name),
                     device.batteryPercentage > 0 && Label(`${device.batteryPercentage}%`),
                     Box({ hexpand: true }),
-                    device.connecting ? Spinner() : ags.Widget({
+                    device.connecting ? Spinner() : Widget({
                         type: imports.gi.Gtk.Switch,
                         active: device.connected,
                         connections: [['notify::active', ({ active }) => {

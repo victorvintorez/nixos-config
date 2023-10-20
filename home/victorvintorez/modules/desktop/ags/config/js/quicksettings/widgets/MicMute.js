@@ -1,7 +1,7 @@
 import icons from '../../icons.js';
 import { SimpleToggleButton } from '../ToggleButton.js';
-const { Audio } = ags.Service;
-const { Icon } = ags.Widget;
+import { Audio, Widget } from '../../imports.js'
+const { Icon } = Widget;
 
 export default () => SimpleToggleButton({
     icon: Icon({

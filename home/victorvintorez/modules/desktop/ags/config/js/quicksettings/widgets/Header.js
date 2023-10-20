@@ -3,8 +3,8 @@ import PowerMenu from '../../services/powermenu.js';
 import Theme from '../../services/theme/theme.js';
 import Avatar from '../../misc/Avatar.js';
 import { uptime } from '../../variables.js';
-const { Battery } = ags.Service;
-const { Box, Label, Button, Icon, Overlay, ProgressBar } = ags.Widget;
+import { Battery, Widget, Utils } from '../../imports.js'
+const { Box, Label, Button, Icon, Overlay, ProgressBar } = Widget;
 
 
 export const BatteryProgress = () => Box({
@@ -59,7 +59,7 @@ export default () => Box({
                         }),
                         Button({
                             valign: 'center',
-                            onClicked: () => ags.Utils.exec('gtklock'),
+                            onClicked: () => Utils.exec('gtklock'),
                             child: Icon(icons.lock),
                         }),
                         Button({

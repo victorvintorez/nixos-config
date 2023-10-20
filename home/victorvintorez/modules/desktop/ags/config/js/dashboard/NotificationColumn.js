@@ -1,7 +1,6 @@
 import icons from '../icons.js';
 import Notification from '../misc/Notification.js';
-import { Service, Widget } from '../imports.js'
-const { Notifications } = Service;
+import { Notifications, Widget } from '../imports.js'
 const { Button, Label, Box, Icon, Scrollable } = Widget;
 
 const ClearButton = () => Button({

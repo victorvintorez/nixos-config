@@ -4,11 +4,12 @@ import icons from './icons.js';
 import Theme from './services/theme/theme.js';
 import { Hyprland } from './imports.js';
 
+/* Broken with new hyprland update
 export function forMonitors(widget) {
     const monitors = Hyprland.monitors;
-    console.log(monitors)
     return monitors.map(monitor => widget(monitor.id));
 }
+*/
 
 export function createSurfaceFromWidget(widget) {
     const alloc = widget.get_allocation();

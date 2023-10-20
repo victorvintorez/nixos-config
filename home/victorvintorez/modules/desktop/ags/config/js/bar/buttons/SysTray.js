@@ -17,6 +17,8 @@ const SysTrayItem = item => PanelButton({
     onSecondaryClick: (_, event) => item.openMenu(event),
 });
 
-export default () => Widget.Box({
+const systray = Widget.Box({
     binds: [['children', SystemTray, 'items', i => i.map(SysTrayItem)]],
 });
+
+export default systray;

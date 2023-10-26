@@ -100,9 +100,9 @@
         "󰕾"
       ]
     },
-    "on-click": "sh ~/.config/scripts/volume mute",
-    "on-scroll-up": "sh ~/.config/scripts/volume up",
-    "on-scroll-down": "sh ~/.config/scripts/volume down",
+    "on-click": "sh ~/.config/scripts/volume.sh mute",
+    "on-scroll-up": "sh ~/.config/scripts/volume.sh up",
+    "on-scroll-down": "sh ~/.config/scripts/volume.sh down",
     "scroll-step": 5,
     "on-click-right": "pavucontrol"
   },

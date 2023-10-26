@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }: let 
-  randwall = pkgs.writeShellScript "randwall" builtins.readFile ./randwall.sh;
-  volume = pkgs.writeShellScript "volume" builtins.readFile ./volume.sh;
+  randwall = (pkgs.${pkgs.system}.writeShellScript "randwall" builtins.readFile ./randwall.sh).outPath;
+  volume = (pkgs.${pkgs.system}.writeShellScript "volume" builtins.readFile ./volume.sh).outPath;
 in {
   programs.waybar = {
     enable = true;

@@ -27,6 +27,5 @@
     pavucontrol
     gnome.gnome-bluetooth
     libdbusmenu-gtk3
-    run-ags
   ];
 }

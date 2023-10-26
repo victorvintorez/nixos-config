@@ -65,6 +65,9 @@
         enable = true;
       };
     };
+  	seahorse = {
+		enable = true;
+    };
   };
 
   programs.thunar = {

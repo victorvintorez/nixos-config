@@ -50,9 +50,6 @@
   };
 
   programs = {
-  	seahorse = {
-		enable = true;
-	};
 	home-manager = {
 		enable = true;
 	};

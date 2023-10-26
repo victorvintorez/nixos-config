@@ -1,0 +1,27 @@
+#!/bin/sh
+down() {
+pamixer -d 5
+volume=$(pamixer --get-volume)
+[$volume -gt 0 ] && volume=`expr $volume`  
+}
+
+up() {
+pamixer -i 5
+volume=$(pamixer --get-volume)
+[ $volume -lt 100 ] && volume=`expr $volume`  
+}
+
+mute() {
+muted="$(pamixer --get-mute)"
+if $muted; then
+  pamixer -u
+else 
+  pamixer -m
+fi
+}
+
+case "$1" in
+  up) up;;
+  down) down;;
+  mute) mute;;
+esac

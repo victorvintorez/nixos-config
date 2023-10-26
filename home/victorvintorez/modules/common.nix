@@ -35,11 +35,26 @@
     };
   };
 
+  security = {
+	pam = {
+		services = {
+			greetd.enableGnomeKeyring = true;
+		};
+	};
+  };
+
   services = {
     gnome-keyring = {
       enable = true;
     };
   };
 
-  programs.home-manager.enable = true;
+  programs = {
+  	seahorse = {
+		enable = true;
+	};
+	home-manager = {
+		enable = true;
+	};
+  };
 }

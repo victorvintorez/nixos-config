@@ -1,0 +1,119 @@
+{
+  "position": "top",
+  "layer": "top",
+  "output": "DP-2",
+  "height": 24,
+  "margin-top": 0,
+  "margin-bottom": 2,
+  "margin-left": 0,
+  "margin-right": 0,
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+    "custom/playerctl"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "tray",
+    "custom/randwall",
+    "battery",
+    "network",
+    "pulseaudio",
+    "clock"
+  ],
+  "clock": {
+    "format": "󰅐 {:%H:%M}",
+    "tooltip": "true",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "󰃭 {:%d/%m}"
+  },
+  "hyprland/workspaces": {
+    "active-only": false,
+    "all-outputs": true,
+    "disable-scroll": false,
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "format": "{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "urgent": "",
+      "active": "",
+      "default": "󰧞",
+      "persistent": "󰧞",
+      "sort-by-number": true
+    },
+    "persistent_workspaces": {
+      "*": 5
+    }
+  },
+  "custom/playerctl": {
+    "format": "{icon} <span>{}</span>",
+    "return-type": "json",
+    "max-length": 64,
+    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause",
+    "format-icons": {
+      "Playing": "<span foreground='#E5B9C6'>󰐌 </span>",
+      "Paused": "<span foreground='#928374'>󰏥 </span>"
+    }
+  },
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": "{icon} {time}",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "network": {
+    "format-wifi": "󰤨",
+    "format-ethernet": "󰈀 {ifname}: Aesthetic",
+    "format-linked": "󰈂 {ifname} (No IP)",
+    "format-disconnected": "󰤭",
+    "format-alt": "󰛳 {ifname}: {ipaddr}/{cidr}",
+    "tooltip-format": "{essid}",
+    "on-click-right": "nm-connection-editor"
+  },
+  "tray": {
+    "icon-size": 18,
+    "spacing": 5
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": [
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "sh ~/.config/scripts/volume mute",
+    "on-scroll-up": "sh ~/.config/scripts/volume up",
+    "on-scroll-down": "sh ~/.config/scripts/volume down",
+    "scroll-step": 5,
+    "on-click-right": "pavucontrol"
+  },
+  "custom/randwall": {
+    "format": "󰸉",
+    "on-click": "sh $HOME/.config/scripts/randwall.sh"
+  },
+  "custom/launcher": {
+    "format": "󰈸",
+    "on-click": "sleep 0.1 && rofi -show drun",
+    "on-click-right": "sleep 0.1 && rofi -show run",
+    "on-click-middle": "sleep 0.1 && sh $HOME/.config/rofi/bin/powermenu"
+  }
+}

@@ -70,6 +70,14 @@
     };
   };
 
+  security = {
+	pam = {
+		services = {
+			greetd.enableGnomeKeyring = true;
+		};
+	};
+  };
+
   programs.thunar = {
     enable = true;
     plugins = with pkgs.xfce; [

@@ -35,14 +35,6 @@
     };
   };
 
-  security = {
-	pam = {
-		services = {
-			greetd.enableGnomeKeyring = true;
-		};
-	};
-  };
-
   services = {
     gnome-keyring = {
       enable = true;

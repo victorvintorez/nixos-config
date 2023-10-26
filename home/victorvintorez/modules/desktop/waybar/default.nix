@@ -4,27 +4,27 @@
     export SWWW_TRANSITION_STEP=2
 
     find "~/.config/wallpapers" |
-	    shuf -n 1 | while read -r img; do ${pkgs.swww} img "$img" -o eDP-1; done
+	    shuf -n 1 | while read -r img; do ${pkgs.swww}/bin/swww img "$img" -o eDP-1; done
   '').outPath;
   volume = (pkgs.writeShellScript "volume" ''
     down() {
-      ${pkgs.pamixer} -d 5
-      volume=$(${pkgs.pamixer} --get-volume)
+      ${pkgs.pamixer}/bin/pamixer -d 5
+      volume=$(${pkgs.pamixer}/bin/pamixer --get-volume)
       [$volume -gt 0 ] && volume=`expr $volume`  
     }
 
     up() {
-      ${pkgs.pamixer} -i 5
-      volume=$(${pkgs.pamixer} --get-volume)
+      ${pkgs.pamixer}/bin/pamixer -i 5
+      volume=$(${pkgs.pamixer}/bin/pamixer --get-volume)
       [ $volume -lt 100 ] && volume=`expr $volume`  
     }
 
     mute() {
-      muted="$(${pkgs.pamixer} --get-mute)"
+      muted="$(${pkgs.pamixer}/bin/pamixer --get-mute)"
       if $muted; then
-        ${pkgs.pamixer} -u
+        ${pkgs.pamixer}/bin/pamixer -u
       else 
-        ${pkgs.pamixer} -m
+        ${pkgs.pamixer}/bin/pamixer -m
       fi
     }
 

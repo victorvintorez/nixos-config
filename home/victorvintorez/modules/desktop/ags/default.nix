@@ -1,8 +1,4 @@
-{ config, pkgs, inputs, lib, ... }: let 
-  run-ags =   pkgs.writeShellScriptBin "run-ags" ''
-    cd ~/.config/ags/ && nix develop && bun install && tsc /ts/main.ts --outfile /js/main.js
-  '';
-in {
+{ config, pkgs, inputs, lib, ... }: {
   xdg.configFile."ags".source = ./config;
 
   xdg.configFile."colors/colors.scss".text = ''

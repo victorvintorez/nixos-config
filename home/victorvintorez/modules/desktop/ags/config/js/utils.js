@@ -1,65 +1,31 @@
-import Cairo from 'cairo';
-import options from './options.js';
-import icons from './icons.js';
-import Theme from './services/theme/theme.js';
-import { Hyprland, App, Battery, Utils } from './imports.js';
+import { Hyprland } from "../../oldConfig/js/imports"
+import { App, Utils } from "./imports";
 
-export function forMonitors(widget) {
-    return widget(0)
-    //const monitors = Hyprland.monitors;
-    //return monitors.map(monitor => widget(monitor.id));
+
+export const setMonitor = (widget, monitors) => {
+    const monitors = Hyprland.monitors;
+    if (typeof monitors === "number") return widget(monitors);
 }
 
-export function createSurfaceFromWidget(widget) {
-    const alloc = widget.get_allocation();
-    const surface = new Cairo.ImageSurface(
-        Cairo.Format.ARGB32,
-        alloc.width,
-        alloc.height,
-    );
-    const cr = new Cairo.Context(surface);
-    cr.setSourceRGBA(255, 255, 255, 0);
-    cr.rectangle(0, 0, alloc.width, alloc.height);
-    cr.fill();
-    widget.draw(cr);
-
-    return surface;
-}
-
-export function warnOnLowBattery() {
-    Battery.connect('changed', () => {
-        const { low } = options.battaryBar;
-        if (Battery.percentage < low || Battery.percentage < low / 2) {
-            Utils.execAsync([
-                'notify-send',
-                `${Battery.percentage}% Battery Percentage`,
-                '-i', icons.battery.warning,
-                '-u', 'critical',
-            ]);
-        }
-    });
-}
-
-export function getAudioTypeIcon(icon) {
-    const substitues = [
-        ['audio-headset-bluetooth', icons.audio.type.headset],
-        ['audio-card-analog-usb', icons.audio.type.speaker],
-        ['audio-card-analog-pci', icons.audio.type.card],
-    ];
-
-    for (const [from, to] of substitues) {
-        if (from === icon)
-            return to;
-    }
-
-    return icon;
-}
-
-export function scssWatcher() {
-    return Utils.subprocess([
+export const watchAndCompileSass = () => {
+    const scss = App.configDir + '/scss/main.scss';
+    const css = App.configDir + '/css/main.css';
+    
+    Utils.subprocess([
         'inotifywait',
         '--recursive',
         '--event', 'create,modify',
         '-m', App.configDir + '/scss',
-    ], Theme.setup);
+    ], () => {
+        exec(`sass ${scss} ${css}`);
+        App.resetCss();
+        App.applyCss();
+    });
+};
+
+export const compileTypescript = () => {
+    const ts = App.configDir + '/ts/main.ts';
+    const js = App.configDir + '/js/main.js';
+
+    exec(`cd ${App.configDir} && nix develop && bun install && tsc ${ts} --outfile ${js}`)
 }

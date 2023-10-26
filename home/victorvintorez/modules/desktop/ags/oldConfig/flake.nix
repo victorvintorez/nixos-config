@@ -20,7 +20,7 @@
     {
       devShells = forEachSupportedSystem ({ pkgs }: {
         default = pkgs.mkShell {
-          packages = with pkgs; [ node2nix nodejs pnpm yarn bun ];
+          packages = with pkgs; [ node2nix nodejs pnpm yarn ];
         };
       });
     };

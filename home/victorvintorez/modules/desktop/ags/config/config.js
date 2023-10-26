@@ -1,4 +1,4 @@
-import { watchAndCompileSass, watchAndCompileTypescript } from './js/utils';
+import { watchAndCompileSass, watchAndCompileTypescript } from './js/utils.js';
 
 compileTypescript();
 watchAndCompileSass();

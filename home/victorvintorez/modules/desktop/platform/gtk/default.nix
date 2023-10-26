@@ -5,7 +5,7 @@
       name = "Catppuccin-Mocha-Compact-Sky-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "sky" ];
-        tweaks = [ "rimless" "black" ];
+        tweaks = [ "rimless" ];
         size = "compact";
         variant = "mocha";
       };

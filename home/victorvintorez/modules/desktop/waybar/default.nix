@@ -7,10 +7,10 @@
     style = builtins.readFile ./style.css;
   };
 
-  xdg.configFile."waybar/config".source = ./config;
+  xdg.configFile."waybar/config".source = config.lib.file.mkOutOfStoreSymlink "${./config}";
 
-  xdg.configFile."scripts/randwall.sh".source = ./randwall.sh;
-  xdg.configFile."scripts/volume".source = ./volume;
+  xdg.configFile."scripts/randwall.sh".source = config.lib.file.mkOutOfStoreSymlink "${./randwall.sh}";
+  xdg.configFile."scripts/volume".source = config.lib.file.mkOutOfStoreSymlink "${./volume}";
 
   home.packages = with pkgs; [
     playerctl

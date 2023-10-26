@@ -1,6 +1,6 @@
 import { watchAndCompileSass, watchAndCompileTypescript } from './js/utils.js';
 
-compileTypescript();
+//compileTypescript();
 watchAndCompileSass();
 
 import windows from './js/main.js';

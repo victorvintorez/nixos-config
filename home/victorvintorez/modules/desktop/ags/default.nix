@@ -1,10 +1,9 @@
-{ config, pkgs, inputs, lib, ... }: {
-  imports = [ inputs.ags.homeManagerModules.default ];
-
-  programs.ags = {
-    enable = true;
-    configDir = config.lib.file.mkOutOfStoreSymlink "${./config}";
-  };
+{ config, pkgs, inputs, lib, ... }: let 
+  run-ags =   pkgs.writeShellScriptBin "run-ags" ''
+    cd ~/.config/ags/ && nix develop && bun install && tsc /ts/main.ts --outfile /js/main.js
+  '';
+in {
+  xdg.configFile."ags".source = ./config;
 
   xdg.configFile."colors/colors.scss".text = ''
   $base00: #${config.colorScheme.colors.base00};
@@ -26,6 +25,7 @@
   '';
 
   home.packages = with pkgs; [
+    inputs.ags.packages.${pkgs.system}.default
     dart-sass
     pulseaudio
     pavucontrol

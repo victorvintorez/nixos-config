@@ -1,15 +1,16 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, lib, ... }: {
   programs.starship = {
     enable = true;
-    enableFishIntegration = true;
     settings = {
       format =
         let
-          git = "[](fg:#${config.colorScheme.colors.base07} bg:#FCA17D)$git_branch$git_commit$git_state$git_status[](fg:#FCA17D bg:#FCA17D)";
+          git = "$git_branch$git_commit$git_state$git_status";
+          cloud = "$aws$gcloud$openstack";
         in
         ''
-          [](#${config.colorScheme.colors.base06})$username$hostname[](bg:#${config.colorScheme.colors.base07} fg:#${config.colorScheme.colors.base06})$directory(${git}) $fill $time
-          [](fg:#86BBD8 bg:#06969A)$direnv[](fg:#06969A bg:#33658A)$bun$c$dart$deno$dotnet$golang$gradle$java$kotlin$lua$nodejs$python$r$rust$zig[ ](fg:#33658A)$sudo$character
+          $username$hostname($shlvl)($cmd_duration) $fill ($nix_shell)$custom
+          $directory(${git})(- ${cloud}) $fill $time
+          $jobs$character
         '';
 
       fill = {
@@ -17,26 +18,58 @@
         disabled = false;
       };
 
-      git_branch = {
-        style = "fg:#FCA17D bg:#FCA17D";
-      };
-
+      # Core
       username = {
         format = "[$user]($style)";
-        style_user = "fg:#${config.colorScheme.colors.base00} bg:#${config.colorScheme.colors.base06}";
         show_always = true;
       };
-
       hostname = {
-        format = "[@$hostname ]($style)";
+        format = "[@$hostname]($style) ";
         ssh_only = false;
-        style = "fg:#${config.colorScheme.colors.base00} bg:#${config.colorScheme.colors.base06}";
+        style = "bold green";
+      };
+      shlvl = {
+        format = "[$shlvl]($style) ";
+        style = "bold cyan";
+        threshold = 2;
+        repeat = true;
+        disabled = false;
+      };
+      cmd_duration = {
+        format = "took [$duration]($style) ";
       };
 
       directory = {
-        format = "[ $path]($style)([ $read_only]($read_only_style)) ";
-        style = "fg:#${config.colorScheme.colors.base00} bg:#${config.colorScheme.colors.base07}";
-        read_only_style = "fg:red bg:#${config.colorScheme.colors.base07}";
+        format = "[$path]($style)( [$read_only]($read_only_style)) ";
+      };
+      nix_shell = {
+        format = "[($name \\(develop\\) <- )$symbol]($style) ";
+        impure_msg = "";
+        symbol = " ";
+        style = "bold red";
+      };
+      custom = {
+        nix_inspect = let
+          excluded = [
+            "kitty" "imagemagick" "ncurses" "user-environment" "pciutils" "binutils-wrapper"
+          ];
+        in {
+          disabled = false;
+          when = "test -z $IN_NIX_SHELL";
+          command = "${(lib.getExe pkgs.nix-inspect)} ${(lib.concatStringsSep " " excluded)}";
+          format = "[($output <- )$symbol]($style) ";
+          symbol = " ";
+          style = "bold blue";
+        };
+      };
+
+      character = {
+        error_symbol = "[~~>](bold red)";
+        success_symbol = "[->>](bold green)";
+        vimcmd_symbol = "[<<-](bold yellow)";
+        vimcmd_visual_symbol = "[<<-](bold cyan)";
+        vimcmd_replace_symbol = "[<<-](bold purple)";
+        vimcmd_replace_one_symbol = "[<<-](bold purple)";
       };
 
       time = {
@@ -44,27 +77,41 @@
         disabled = false;
       };
 
-      sudo = {
-        disabled = false;
-        format = "[$symbol]($style)";
-        symbol = "󱑷 ";
-        style = "red";
+      # Cloud
+      gcloud = {
+        format = "on [$symbol$active(/$project)(\\($region\\))]($style)";
+      };
+      aws = {
+        format = "on [$symbol$profile(\\($region\\))]($style)";
       };
 
-      character = {
-        error_symbol = "[~~>](bold red)";
-        success_symbol = "[->>](bold green)";
-      };
-
-      custom = {
-        direnv = {
-            command = ''[[ $(direnv status) =~ "Found RC allowed false" ]] && echo "=========> missing: direnv allow <============"'';
-            detect_files = [ ".envrc" ];
-            format = "[$symbol($output)]($style)";
-            symbol = "󱄅 ";
-            style = "bold blue";
-        };
-      };
+      # Icon changes only \/
+      aws.symbol = "  ";
+      conda.symbol = " ";
+      dart.symbol = " ";
+      directory.read_only = " ";
+      docker_context.symbol = " ";
+      elixir.symbol = " ";
+      elm.symbol = " ";
+      gcloud.symbol = " ";
+      git_branch.symbol = " ";
+      golang.symbol = " ";
+      hg_branch.symbol = " ";
+      java.symbol = " ";
+      julia.symbol = " ";
+      memory_usage.symbol = "󰍛 ";
+      nim.symbol = "󰆥 ";
+      nodejs.symbol = " ";
+      package.symbol = "󰏗 ";
+      perl.symbol = " ";
+      php.symbol = " ";
+      python.symbol = " ";
+      ruby.symbol = " ";
+      rust.symbol = " ";
+      scala.symbol = " ";
+      shlvl.symbol = "";
+      swift.symbol = "󰛥 ";
+      terraform.symbol = "󱁢";
     };
   };
 }

@@ -1,4 +1,7 @@
-{ config, pkgs, lib, ... }: {
+{ config, pkgs, lib, ... }: let 
+  randwall = pkgs.writeShellScript "randwall" builtins.readFile ./randwall.sh;
+  volume = pkgs.writeShellScript "volume" builtins.readFile ./volume.sh;
+in {
   programs.waybar = {
     enable = true;
     systemd = {
@@ -9,8 +12,8 @@
 
   xdg.configFile."waybar/config".source =  config.lib.file.mkOutOfStoreSymlink "${./config}";
 
-  xdg.configFile."scripts/randwall.sh".source = pkgs.writeShellScript "randwall" builtins.readFile ./randwall.sh;
-  xdg.configFile."scripts/volume.sh".source = pkgs.writeShellScript "volume" builtins.readFile ./volume.sh;
+  xdg.configFile."scripts/randwall.sh".source = randwall;
+  xdg.configFile."scripts/volume.sh".source = volume;
 
   home.packages = with pkgs; [
     playerctl

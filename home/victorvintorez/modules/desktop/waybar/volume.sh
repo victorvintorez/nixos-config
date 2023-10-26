@@ -1,4 +1,3 @@
-#!/bin/bash
 down() {
 pamixer -d 5
 volume=$(pamixer --get-volume)

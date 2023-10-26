@@ -1,5 +1,3 @@
-#!/bin/bash
-
 export SWWW_TRANSITION_FPS=60
 export SWWW_TRANSITION_STEP=2
 

@@ -2,7 +2,7 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Compact-Sky-dark";
+      name = "Catppuccin-Mocha-Compact-Sky-Dark";
       package = pkgs.catppuccin-gtk.override {
         accents = [ "sky" ];
         tweaks = [ "rimless" "black" ];

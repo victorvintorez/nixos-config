@@ -4,8 +4,9 @@
     ./hyprland
     ./platform
     ./rofi
-	./vscode
     ./swww
+	./vscode
+   ./waybar 
     ./firefox.nix
     ./gtklock.nix
 	./kitty.nix

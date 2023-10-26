@@ -9,7 +9,7 @@
 
 		arkenfox = {
 			enable = true;
-			version = "118.0.1";
+			version = "118.0";
 		};
 
 		profiles.Default = {

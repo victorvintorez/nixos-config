@@ -5,7 +5,7 @@
 
   xdg.configFile."gtklock/style.css".text = ''
     window {
-      background: url('~/.config/wallpapers/windows-error.jpg');
+      background: #${config.colorScheme.colors.base00};
       font-family: 'Iosevka Nerd Font';
     }
 

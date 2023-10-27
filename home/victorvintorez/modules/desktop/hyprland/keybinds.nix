@@ -59,6 +59,22 @@
         "$M, R, exec, rofi -show run"
 				"$M, Space, exec, ags -t applauncher"
         "$M, V, exec, cliphist | rofi -dmenu | cliphist decode | wl-copy"
+
+	# Function key alt binds
+	## Function Lock Toggle
+	", XF86AudioMute, exec, pamixer --toggle-mute";
+	", XF86AudioRaiseVolume, exec, pamixer --increase 5";
+	", XF86AudioLowerVolume, exec, pamixer --decrease 5";
+	", XF86AudioMicMute, exec, pamixer --default-source --toggle-mute";
+	", XF86AudioPlay, exec, playerctl play-pause";
+	## Keyboard Backlight Control (0%/50%/100%)
+	", XF86MonBrightnessDown, exec, brightnessctl set 5%-";
+	", XF86MonBrightnessUp, exec, brightnessctl set +5%";
+	## Super+P / XF86Display
+	## Printscreen
+	## Home
+	## End
+	## Insert
 			];
       bindm = [
         "$M, mouse:272, movewindow"

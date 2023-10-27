@@ -10,6 +10,7 @@
         "$M, F, fullscreen"
         "$M, P, pseudo"
         "$M, J, togglesplit"
+	"$M, L, exec, gtklock"
 
         # Focus Movement
         "$M, left, movefocus, l"

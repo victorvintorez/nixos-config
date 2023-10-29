@@ -78,7 +78,11 @@
   nixpkgs = {
     config = {
       allowUnfree = true;
+      allowUnfreePredicate = _: true;
     };
+    overlays = [
+	outputs.overlays.modifications;
+    ];
   };
 
   # Minimal Default Packages

@@ -11,9 +11,6 @@
       allowUnfree = true;
       allowUnfreePredicate = _: true;
     };
-	overlays = [
-		outputs.overlays.modifications
-	];
   };
 
   # Setup User

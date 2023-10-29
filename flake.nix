@@ -79,11 +79,18 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: 
     let
       inherit (self) outputs;
+      overlays = [
+	import ./overlays/obsidian.nix
+      ];
       legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-linux" ] (system:
         import inputs.nixpkgs {
           inherit system;
+	  inherit overlays;
           config.allowUnfree = true;
           config.allowUnfreePredicate = _: true;
+	  permittedInsecurePackages = [
+		"electron-24.8.6"
+	  ];
       });
     in {
       inherit legacyPackages;

@@ -2,6 +2,6 @@
   home.packages = with pkgs; [
     libreoffice
     drawio
-    obsidian
+    obsidian-wayland
   ];
 }

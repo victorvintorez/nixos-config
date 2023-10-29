@@ -87,7 +87,7 @@
           inherit system;
           config.allowUnfree = true;
           config.allowUnfreePredicate = _: true;
-	  permittedInsecurePackages = [
+	  config.permittedInsecurePackages = [
 		"electron-24.8.6"
 	  ];
       });

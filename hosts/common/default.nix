@@ -81,7 +81,7 @@
       allowUnfreePredicate = _: true;
     };
     overlays = [
-	outputs.overlays.modifications;
+	outputs.overlays.modifications
     ];
   };
 

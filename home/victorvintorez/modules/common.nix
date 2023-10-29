@@ -1,4 +1,4 @@
-{ inputs, lib, config, pkgs, ... }: {
+{ inputs, outputs, lib, config, pkgs, ... }: {
   # Modules
   imports = [
     ./cli
@@ -11,6 +11,9 @@
       allowUnfree = true;
       allowUnfreePredicate = _: true;
     };
+	overlays = [
+		outputs.overlays.modifications
+	];
   };
 
   # Setup User

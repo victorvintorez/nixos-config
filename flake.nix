@@ -85,7 +85,6 @@
       legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-linux" ] (system:
         import inputs.nixpkgs {
           inherit system;
-	  inherit overlays;
           config.allowUnfree = true;
           config.allowUnfreePredicate = _: true;
 	  permittedInsecurePackages = [
@@ -95,7 +94,7 @@
     in {
       inherit legacyPackages;
       modules = import ./modules;
-      #overlays = import ./overlays { inherit inputs; };
+      overlays = import ./overlays { inherit inputs; };
       
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'

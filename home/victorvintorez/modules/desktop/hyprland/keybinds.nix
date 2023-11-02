@@ -58,7 +58,7 @@
 
         # Rofi Binds
         "$M, R, exec, rofi -show run"
-				"$M, Space, exec, ags -t applauncher"
+				"$M, Space, exec, rofi -show drun"
         "$M, V, exec, cliphist | rofi -dmenu | cliphist decode | wl-copy"
 
 	# Function key alt binds

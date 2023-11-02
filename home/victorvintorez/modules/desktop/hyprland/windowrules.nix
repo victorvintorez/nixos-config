@@ -10,6 +10,7 @@
 
         # Fix for jetbrains spawning windows all the time
         "noanim, title:^(win)*.$"
+        "nofocus, title:^(win)*.$"
         "noinitialfocus, title:^(win)*.$"
 
         # Floating windows by default

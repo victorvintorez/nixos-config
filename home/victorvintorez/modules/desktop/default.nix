@@ -2,6 +2,7 @@
   imports = [
     ./ags
     ./hyprland
+    ./jetbrains
     ./platform
     ./rofi
     ./swww

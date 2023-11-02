@@ -9,9 +9,9 @@
         "noinitialfocus, class:^(xwaylandvideobridge)$"
 
         # Fix for jetbrains spawning windows all the time
-        "noanim, title:^(win)*.$"
-        "nofocus, title:^(win)*.$"
-        "noinitialfocus, title:^(win)*.$"
+        "noanim, title:^(win).*$"
+        "nofocus, title:^(win).*$"
+        "noinitialfocus, title:^(win).*$"
 
         # Floating windows by default
         "float, class:^(org.kde.polkit-kde-authentication-agent-1)$"

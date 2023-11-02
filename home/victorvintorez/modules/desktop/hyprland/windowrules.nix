@@ -9,7 +9,8 @@
         "noinitialfocus, class:^(xwaylandvideobridge)$"
 
         # Fix for jetbrains spawning windows all the time
-        "noanim, class:^(xwaylandvideobridge)$"
+        "noanim, class:^(win)*.$"
+        "nofocus, class:^(win)*.$"
         "noinitialfocus, class:^(win)*.$"
 
         # Floating windows by default

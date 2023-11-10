@@ -43,6 +43,11 @@ in
           type = types.int;
           default = 0;
         };
+	# Scale of monitor
+	scale = mkOption {
+		type = types.int;
+		default = 1;
+	};
         # Is monitor enabled
         enabled = mkOption {
           type = types.bool;

@@ -92,7 +92,7 @@
       };
 
       # Monitor Mapping
-      monitor = builtins.concatLists( map (
+      monitor = map (
         m: let 
           resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
           position = "${toString m.x}x${toString m.y}";
@@ -101,7 +101,7 @@
           then "${resolution},${position},1"
           else "disable"
         }"
-      ) (config.monitors) [", preffered, auto, 1"]);
+      ) (config.monitors) ++ [", preffered, auto, 1"];
 
       workspace = map (m:
         "${m.name},${m.workspace}"

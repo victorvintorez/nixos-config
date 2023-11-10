@@ -5,7 +5,7 @@ in {
 
   programs.spicetify = {
     enable = true;
-    theme = spicepkgs.themes.catppuccin-mocha;
+    theme = spicepkgs.themes.catppuccin;
     colorScheme = "sky";
     enabledExtensions = with spicepkgs.extensions; [
       shuffle

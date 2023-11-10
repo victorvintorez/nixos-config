@@ -43,9 +43,6 @@
       "default": "󰧞",
       "persistent": "󰧞",
       "sort-by-number": true
-    },
-    "persistent_workspaces": {
-      "*": 5
     }
   },
   "custom/playerctl": {

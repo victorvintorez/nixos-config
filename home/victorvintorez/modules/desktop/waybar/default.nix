@@ -3,7 +3,7 @@
     export SWWW_TRANSITION_FPS=61
     export SWWW_TRANSITION_STEP=2
 
-    find "~/.config/wallpapers/" |
+    find -H "~/.config/wallpapers/" |
 	    shuf -n 1 | while read -r img; do ${pkgs.swww}/bin/swww img "$img" -o eDP-1; done
   '').outPath;
   volume = (pkgs.writeShellScript "volume" ''

@@ -86,4 +86,10 @@
       tumbler
     ];
   };
+
+  services = {
+    gvfs = {
+      enable = true;
+    };
+  };
 }

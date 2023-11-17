@@ -80,14 +80,15 @@
   outputs = { self, nixpkgs, home-manager, nur, ... }@inputs: 
     let
       inherit (self) outputs;
+      overlays = with inputs.nixpkgs; [
+        nur.overlay
+      ];
       legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-linux" ] (system:
         import inputs.nixpkgs {
           inherit system;
           config.allowUnfree = true;
           config.allowUnfreePredicate = _: true;
-          overlays = [
-            nur.overlay
-          ];
+          overlays = overlays;
       });
     in {
       inherit legacyPackages;

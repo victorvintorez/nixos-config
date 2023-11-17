@@ -74,20 +74,6 @@
     };
   };
 
-  # Allow unfree packages
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
-	  permittedInsecurePackages = [
-		"electron-24.8.6"
-	  ];
-    };
-    overlays = [
-	outputs.overlays.modifications
-    ];
-  };
-
   # Minimal Default Packages
   environment.systemPackages = with pkgs; [
     wget

@@ -84,7 +84,12 @@
           inherit system;
           config.allowUnfree = true;
           config.allowUnfreePredicate = _: true;
-          overlays = [ nur.overlay ];
+config.permittedInsecurePackages = [
+		"electron-24.8.6"
+	  ];
+          overlays = [ nur.overlay
+	outputs.overlays.modifications
+          ];
       });
     in {
       inherit legacyPackages;

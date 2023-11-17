@@ -12,7 +12,7 @@
 			version = "118.0";
 		};
 
-		profiles.Default = {
+		profiles.default = {
 			bookmarks = {};
 			extensions = with pkgs.nur.repos.rycee.firefox-addons; [
 				bitwarden

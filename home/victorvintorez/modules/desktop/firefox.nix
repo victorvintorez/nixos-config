@@ -77,7 +77,7 @@
 					"5002"."browser.cache.memory.capacity" = {
 						"enable" = false;
 					};
-					"5005"."nocertdb" = {
+					"5005"."security.nocertdb" = {
 						enable = false;
 					};
 					"5008"."sessionstore.resume_from_crash" = {

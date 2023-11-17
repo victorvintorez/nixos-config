@@ -10,10 +10,10 @@
     config = {
       allowUnfree = true;
       allowUnfreePredicate = _: true;
-      packageOverrides = pkgs: {
-        nur = pkgs.callPackage inputs.nur { inherit pkgs;};
-      };
     };
+    overlays = [
+        inputs.nur.overlay
+      ];
   };
 
   # Setup User

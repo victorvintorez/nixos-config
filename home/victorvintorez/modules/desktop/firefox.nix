@@ -104,9 +104,6 @@
 				};
 				"9000" = {
 					enable = true;
-					"9004"."browser.urlbar.showSearchTerms.enabled" = {
-						enabled = false;
-					};
 				};
 			};
 		};

@@ -85,7 +85,6 @@
           inherit system;
           config.allowUnfree = true;
           config.allowUnfreePredicate = _: true;
-          overlays = import ./overlays/nur.nix { inherit inputs system; };
       });
     in {
       inherit legacyPackages;

@@ -6,13 +6,6 @@
     ./nixcolors.nix
   ];
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
-    };
-  };
-
   # Setup User
   home = {
     username = "victorvintorez";

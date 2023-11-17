@@ -3,6 +3,7 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     #inputs.agenix.nixosModules.default
+    inputs.nur.nixosModules.nur
     ./fish.nix
     ./fonts.nix
     ./users.nix

@@ -1,6 +1,6 @@
 { config, pkgs, inputs, ... }: {
 	imports = [
-		inputs.arkenfox-nix.hmModules.arkenfox
+		inputs.arkenfox-nixos.hmModules.arkenfox
 	];
 
 	programs.firefox = {

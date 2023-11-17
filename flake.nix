@@ -36,6 +36,12 @@
     # Nix-colors
     nix-colors.url = "github:misterio77/nix-colors";
 
+    # NUR
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Hyprland
     hyprland = {
       url = "github:hyprwm/Hyprland";
@@ -60,11 +66,6 @@
       url = "github:Aylur/ags";
     };
 
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     arkenfox-nixos = {
       url = "github:dwarfmaster/arkenfox-nixos";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -76,11 +77,12 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, nur, ... }@inputs: 
     let
       inherit (self) outputs;
       overlays = [
-	import ./overlays/obsidian.nix
+	      import ./overlays/obsidian.nix
+        nur.overlay
       ];
       legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-linux" ] (system:
         import inputs.nixpkgs {

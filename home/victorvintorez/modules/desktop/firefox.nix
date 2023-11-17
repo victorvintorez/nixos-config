@@ -1,8 +1,4 @@
 { config, pkgs, inputs, ... }: {
-	imports = [ 
-		inputs.arkenfox-nixos.hmModules.arkenfox
-	];
-
 	programs.firefox = {
 		enable = true;
 		package = pkgs.firefox-wayland;
@@ -14,7 +10,7 @@
 
 		profiles.Default = {
 			bookmarks = {};
-			extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
+			extensions = with pkgs.nur.repos.rycee.firefox-addons; [
 				bitwarden
 				ublock-origin
 				#languagetool
@@ -39,10 +35,25 @@
 				"0400" = {
 					enable = true;
 				};
+				"0800" = {
+					enable = true;
+					"0803"."browser.search.suggest.enabled" = {
+						enable = false;
+					};
+					"0803"."browser.urlbar.suggest.searches" = {
+						enable = false;
+					};
+				};
 				"0900" = {
 					enable = true;
 				};
 				"1200" = {
+					enable = true;
+				};
+				"1600" = {
+					enable = true;
+				};
+				"2400" = {
 					enable = true;
 				};
 				"2600" = {
@@ -51,8 +62,47 @@
 				"2700" = {
 					enable = true;
 				};
+				"5000" = {
+					enable = true;
+					"5001"."browser.privatebrowsing.autostart" = {
+						enable = false;
+					};
+					"5002"."browser.cache.memory.enable" = {
+						enable = false;
+					};
+					"5002"."browser.cache.memory.capacity" = {
+						"enable" = false;
+					};
+					"5005"."nocertdb" = {
+						enable = false;
+					};
+					"5008"."sessionstore.resume_from_crash" = {
+						enable = false;
+					};
+					"5010"."browser.urlbar.suggest.history" = {
+						enable = false;
+					};
+					"5010"."browser.urlbar.suggest.openpage" = {
+						enable = false;
+					};
+					"5012"."browser.urlbar.autoFill" = {
+						enable = false;
+					};
+					"5013"."places.history.enabled" = {
+						enable = false;
+					};
+					"5021"."keyword.enabled" = {
+						enable = false;
+					};
+				};
 				"6000" = {
 					enable = true;
+				};
+				"9000" = {
+					enable = true;
+					"9004"."browser.urlbar.showSearchTerms.enabled" = {
+						enabled = false;
+					};
 				};
 			};
 		};

@@ -84,6 +84,7 @@
           inherit system;
           config.allowUnfree = true;
           config.allowUnfreePredicate = _: true;
+          overlays = [ nur.overlay ];
       });
     in {
       inherit legacyPackages;

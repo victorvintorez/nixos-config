@@ -14,7 +14,7 @@
 
 		profiles.Default = {
 			bookmarks = {};
-			extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+			extensions = with inputs.nur.repos.rycee.firefox-addons; [
 				bitwarden
 				ublock-origin
 				#languagetool

@@ -85,7 +85,6 @@
     };
     overlays = [
 	outputs.overlays.modifications
-  inputs.nur.overlay
     ];
   };
 

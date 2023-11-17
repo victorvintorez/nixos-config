@@ -100,6 +100,7 @@
           pkgs = legacyPackages.x86_64-linux;
           specialArgs = { inherit inputs outputs; };
           modules = [
+            nur.nixosModules.nur
             ./hosts/desktop
           ];
         };
@@ -108,6 +109,7 @@
         laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
+            nur.nixosModules.nur
             ./hosts/laptop
           ];
         };

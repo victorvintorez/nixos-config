@@ -6,16 +6,6 @@
     ./nixcolors.nix
   ];
 
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = _: true;
-    };
-    overlays = [
-        inputs.nur.overlay
-      ];
-  };
-
   # Setup User
   home = {
     username = "victorvintorez";

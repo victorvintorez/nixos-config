@@ -1,4 +1,8 @@
 { config, pkgs, inputs, ... }: {
+	imports = [
+		inputs.arkenfox.hmModules.arkenfox
+	];
+
 	programs.firefox = {
 		enable = true;
 		package = pkgs.firefox-wayland;

@@ -80,7 +80,7 @@
 					"5005"."security.nocertdb" = {
 						enable = false;
 					};
-					"5008"."sessionstore.resume_from_crash" = {
+					"5008"."browser.sessionstore.resume_from_crash" = {
 						enable = false;
 					};
 					"5010"."browser.urlbar.suggest.history" = {

@@ -70,7 +70,7 @@ in
         };
         # Default Workspace for Monitor (optional)
         workspace = mkOption {
-          type = types.nullOr types.either types.int types.str;
+          type = types.oneOf [ types.null types.int types.str ];
           default = null;
         };
       };

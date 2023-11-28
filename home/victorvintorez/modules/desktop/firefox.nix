@@ -1,118 +1,53 @@
 { config, pkgs, inputs, ... }: {
 	imports = [
-		inputs.arkenfox-nixos.hmModules.arkenfox
+		inputs.schizofox.homeManagerModules.default
 	];
 
-	programs.firefox = {
+	programs.schizofox = {
 		enable = true;
-		package = pkgs.firefox-wayland;
 
-		arkenfox = {
-			enable = true;
-			version = "118.0";
-		};
-
-		profiles.default = {
-			bookmarks = {};
-			extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-				bitwarden
-				ublock-origin
-				#languagetool
-				#wappalyzer
-			];
-			arkenfox = {
+		theme = {
+			background-darker = config.colorSchemes.colors.base01;
+			background = config.colorSchemes.colors.base02;
+			foreground = config.colorSchemes.colors.base05;
+			font = "Iosevka Term";
+			darkreader = {
 				enable = true;
-				"0000".enable = true;
-				"0100" = {
-					enable = true;
-					"0102"."browser.startup.page" = {
-						enable = true;
-						value = 3;
-					};
-				};
-				"0200" = {
-					enable = true;
-				};
-				"0300" = {
-					enable = true;
-				};
-				"0400" = {
-					enable = true;
-				};
-				"0800" = {
-					enable = true;
-					"0803"."browser.search.suggest.enabled" = {
-						enable = false;
-					};
-					"0803"."browser.urlbar.suggest.searches" = {
-						enable = false;
-					};
-				};
-				"0900" = {
-					enable = true;
-				};
-				"1200" = {
-					enable = true;
-				};
-				"1600" = {
-					enable = true;
-				};
-				"2400" = {
-					enable = true;
-				};
-				"2600" = {
-					enable = true;
-				};
-				"2700" = {
-					enable = true;
-				};
-				"5000" = {
-					enable = true;
-					"5001"."browser.privatebrowsing.autostart" = {
-						enable = false;
-					};
-					"5002"."browser.cache.memory.enable" = {
-						enable = false;
-					};
-					"5002"."browser.cache.memory.capacity" = {
-						"enable" = false;
-					};
-					"5005"."security.nocertdb" = {
-						enable = false;
-					};
-					"5008"."browser.sessionstore.resume_from_crash" = {
-						enable = false;
-					};
-					"5010"."browser.urlbar.suggest.history" = {
-						enable = false;
-					};
-					"5010"."browser.urlbar.suggest.openpage" = {
-						enable = false;
-					};
-					"5012"."browser.urlbar.autoFill" = {
-						enable = false;
-					};
-					"5013"."places.history.enabled" = {
-						enable = false;
-					};
-					"5021"."keyword.enabled" = {
-						enable = false;
-					};
-				};
-				"6000" = {
-					enable = true;
-				};
-				"9000" = {
-					enable = true;
-				};
 			};
 		};
-	};
 
-	xdg.mimeApps.defaultApplications = {
-    "text/html" = [ "firefox.desktop" ];
-    "text/xml" = [ "firefox.desktop" ];
-    "x-scheme-handler/http" = [ "firefox.desktop" ];
-    "x-scheme-handler/https" = [ "firefox.desktop" ];
-  };
+		search = {
+			defaultSearchEngine = "DuckDuckGo";
+			removeEngines = [ "Google" "Bing" "Amazon.com" "eBay" "Brave" "Twitter" ];
+		};
+
+		security = {
+			sanitizeOnShutdown = false;
+			sandbox = false;
+		};
+
+		extensions = {
+			# Disable Default Extensions
+			defaultExtensions = {};
+
+			extraExtensions = {
+				"uBlock0@raymondhill.net".install_url = "https://addons.mozilla.org/firefox/downloads/latest/ublock-origin/latest.xpi";
+				"wappalyzer@crunchlabz.com".install_url = "https://addons.mozilla.org/firefox/downloads/latest/wappalyzer/latest.xpi";
+				"tabcenter-reborn@ariasuni".install_url = "https://addons.mozilla.org/firefox/downloads/latest/tabcenter-reborn/latest.xpi";
+				"@react-devtools".install_url = "https://addons.mozilla.org/firefox/downloads/latest/react-devtools/latest.xpi";
+				"jid1-ZAdIEUB7XOzOJw@jetpack".install_url = "https://addons.mozilla.org/firefox/downloads/latest/duckduckgo-for-firefox/latest.xpi";
+				"{74145f27-f039-47ce-a470-a662b129930a}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/clearurls/latest.xpi";
+				"{446900e4-71c2-419f-a6a7-df9c091e268b}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/bitwarden-password-manager/latest.xpi";
+				"{762f9885-5a13-4abd-9c77-433dcd38b8fd}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/return-youtube-dislikes/latest.xpi";
+				"languagetool-webextension@languagetool.org".install_url = "https://addons.mozilla.org/firefox/downloads/latest/languagetool/latest.xpi";
+				"{7a7a4a92-a2a0-41d1-9fd7-1e92480d612d}".install_url = "https://addons.mozilla.org/firefox/downloads/latest/styl-us/latest.xpi";
+			};
+		};
+
+		misc = {
+			drmFix = true;
+			disableWebgl = false;
+			startPageURL = "https://duckduckgo.com";
+		};
+	};
 }

@@ -1,8 +1,4 @@
 { config, pkgs, ... }: {
-  imports = [
-    ./logind.nix
-  ];
-  
   services = {
     greetd = {
       enable = true;
@@ -14,6 +10,10 @@
         };
         default_session = initial_session;
       };
+    };
+    logind = {
+      lidSwitch = "suspend";
+      lidSwitchExternalPower = "lock";
     };
   };
 }

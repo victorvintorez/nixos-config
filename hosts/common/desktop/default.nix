@@ -1,7 +1,7 @@
 { config, pkgs, inputs, lib, ... }: {
   imports = [
     ./pipewire.nix
-    ./greeter
+    ./greeter.nix
   ];
 
   environment = {

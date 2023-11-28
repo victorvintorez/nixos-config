@@ -1,4 +1,29 @@
-{ config, pkgs, inputs, lib, ... }: {
+{ config, pkgs, inputs, lib, ... }: let
+  monitorsList = map (
+    m: let
+      resolution = ", ${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+      position = ", ${toString m.x}x${toString m.y}";
+	  scale = if m.scale != null then ", ${toString m.scale}" else "";
+	  transform = if m.transform != null then ", transform, ${toString m.transform}" else "";
+	  mirror = if m.mirror != null then ", mirror, ${m.mirror}" else "";
+	  vrr = if m.vrr != null then ", vrr, ${m.vrr}" else "";
+    in "${m.name}${
+      if m.enabled
+      then "${resolution}${position}${scale}${transform}${mirror}${vrr}"
+      else ", disable"
+    }"
+  ) (config.monitors);
+
+  workspace = map (
+    m: "${
+      if typeOf m.workspace == "int"
+      then "${m.workspace}, monitor:${m.name}, default:true, persistent:true"
+      else if typeOf m.workspace == "str"
+      then "name:${m.workspace}, monitor:${m.name}, default:true, persistent:true"
+      else ""
+    }"
+  ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
+in {
 	imports = [
     ./env.nix
     ./keybinds.nix
@@ -9,14 +34,13 @@
   wayland.windowManager.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.default;
-    enableNvidiaPatches = true;
     systemd = {
       enable = true;
     };
     xwayland = {
-			enable = true;
+      enable = true;
     };
-		settings = {
+    settings = {
       general = {
         gaps_in = 5;
         gaps_out = 5;
@@ -92,21 +116,8 @@
       };
 
       # Monitor Mapping
-      monitor = map (
-        m: let 
-          resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
-          position = "${toString m.x}x${toString m.y}";
-	  scale = "${toString m.scale}";
-        in "${m.name},${
-          if m.enabled
-          then "${resolution},${position},${scale}"
-          else "disable"
-        }"
-      ) (config.monitors) ++ [", preferred, auto, 1"];
-
-      workspace = map (m:
-        "${m.name},${m.workspace}"
-      ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
-		};
+      monitor = monitorsList;
+      workspace = workspaceList;
+    };
   };
 }

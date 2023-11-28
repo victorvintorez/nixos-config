@@ -25,21 +25,16 @@
     };
 
     # agenix
-    #agenix = {
-    #  url = "github:ryantm/agenix";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # Nix-hardware
     hardware.url = "github:nixos/nixos-hardware";
 
     # Nix-colors
     nix-colors.url = "github:misterio77/nix-colors";
-
-    # NUR
-    nur = {
-      url = "github:nix-community/NUR";
-    };
 
     # Hyprland
     hyprland = {
@@ -53,8 +48,8 @@
 
     # Nixvim
     nixvim = {
-	    url = "github:nix-community/nixvim";
-	    inputs.nixpkgs.follows = "nixpkgs";
+        url = "github:nix-community/nixvim";
+        inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Schizofox
@@ -63,11 +58,6 @@
     # Aylur's GTK Shell
     ags = {
       url = "github:Aylur/ags";
-    };
-
-    arkenfox-nixos = {
-      url = "github:dwarfmaster/arkenfox-nixos";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Spicetify (Spotify wrapper)
@@ -84,11 +74,11 @@
           inherit system;
           config.allowUnfree = true;
           config.allowUnfreePredicate = _: true;
-config.permittedInsecurePackages = [
-		"electron-24.8.6"
-	  ];
-          overlays = [ nur.overlay
-	outputs.overlays.modifications
+          config.permittedInsecurePackages = [
+            "electron-24.8.6"
+          ];
+          overlays = [
+            outputs.overlays.modifications
           ];
       });
     in {

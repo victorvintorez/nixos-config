@@ -43,18 +43,34 @@ in
           type = types.int;
           default = 0;
         };
-	# Scale of monitor
-	scale = mkOption {
-		type = types.int;
-		default = 1;
-	};
+	    # Scale of monitor (optional)
+	    scale = mkOption {
+		  type = types.nullOr types.int;
+		  default = 1;
+	    };
+	    # Rotation of monitor (optional)
+	    transform = mkOption {
+	      type = types.nullOr types.int;
+	      default = 0;
+	    };
+	    # The monitor to mirror (optional)
+	    mirror = mkOption {
+	      type = types.nullOr types.str;
+	      default = null;
+	    };
+	    # Is VRR enabled (optional)
+	    vrr = mkOption {
+	      type = types.nullOr types.int;
+	      default = null;
+	    };
         # Is monitor enabled
         enabled = mkOption {
           type = types.bool;
           default = true;
         };
+        # Default Workspace for Monitor (optional)
         workspace = mkOption {
-          type = types.nullOr types.str;
+          type = types.nullOr types.either types.int types.str;
           default = null;
         };
       };

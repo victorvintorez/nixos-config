@@ -17,7 +17,7 @@
   workspaceList = map (
     m: "${
       if builtins.isInt m.workspace
-      then "${m.workspace}, monitor:${m.name}, default:true, persistent:true"
+      then "${toString m.workspace}, monitor:${m.name}, default:true, persistent:true"
       else if builtins.isStr
       then "name:${m.workspace}, monitor:${m.name}, default:true, persistent:true"
       else ""

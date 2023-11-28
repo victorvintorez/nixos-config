@@ -16,9 +16,9 @@
 
   workspace = map (
     m: "${
-      if typeOf m.workspace == "int"
+      if builtins.isInt m.workspace
       then "${m.workspace}, monitor:${m.name}, default:true, persistent:true"
-      else if typeOf m.workspace == "str"
+      else if builtins.isStr
       then "name:${m.workspace}, monitor:${m.name}, default:true, persistent:true"
       else ""
     }"

@@ -7,9 +7,9 @@
 		enable = true;
 
 		theme = {
-			background-darker = config.colorSchemes.colors.base01;
-			background = config.colorSchemes.colors.base02;
-			foreground = config.colorSchemes.colors.base05;
+			background-darker = config.colorScheme.colors.base01;
+			background = config.colorScheme.colors.base02;
+			foreground = config.colorScheme.colors.base05;
 			font = "Iosevka Term";
 			darkreader = {
 				enable = true;

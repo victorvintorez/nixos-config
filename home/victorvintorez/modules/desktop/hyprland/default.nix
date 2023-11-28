@@ -14,7 +14,7 @@
     }"
   ) (config.monitors);
 
-  workspace = map (
+  workspaceList = map (
     m: "${
       if builtins.isInt m.workspace
       then "${m.workspace}, monitor:${m.name}, default:true, persistent:true"

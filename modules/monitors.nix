@@ -51,7 +51,7 @@ in
 	    # Rotation of monitor (optional)
 	    transform = mkOption {
 	      type = types.nullOr types.int;
-	      default = 0;
+	      default = null;
 	    };
 	    # The monitor to mirror (optional)
 	    mirror = mkOption {

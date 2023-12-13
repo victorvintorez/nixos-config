@@ -21,8 +21,7 @@
     cliphist
     wl-clipboard
     brightnessctl
-    wayshot
-    swappy
+    grim
     slurp
     wf-recorder
     libnotify

@@ -60,6 +60,7 @@
         "$M, R, exec, rofi -show run"
 				"$M, Space, exec, rofi -show drun"
         "$M, V, exec, cliphist | rofi -dmenu | cliphist decode | wl-copy"
+        "$M SHIFT, S, exec, grim -g \"\$(slurp)\" - | wl-copy -t image/png && wl-paste -t image/png > \$(xdg-user-dir PICTURES)/screenshots/\$(date +'%Y-%m-%d-%H%M%S.png')"
 
 	# Function key alt binds
 	## Function Lock Toggle

@@ -1,17 +1,17 @@
 {
-  "name": "ags-config",
-  "module": "config.js",
-  "type": "module",
-  "scripts": {
-    "dev": "ags -q && ags"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "tsc": "^2.0.4"
-  }
+	"name": "ags-config",
+	"module": "config.js",
+	"type": "module",
+	"scripts": {
+		"dev": "ags -q && ags"
+	},
+	"devDependencies": {
+		"bun-types": "latest"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	},
+	"dependencies": {
+		"tsc": "^2.0.4"
+	}
 }

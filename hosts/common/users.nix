@@ -11,6 +11,7 @@
           "audio"
           "networkmanager"
           "seat"
+          "adbusers"
         ];
       };
     };

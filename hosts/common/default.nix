@@ -5,6 +5,7 @@
     #inputs.agenix.nixosModules.default
     ./fish.nix
     ./fonts.nix
+    ./printing.nix
     ./users.nix
     ./desktop
   ];

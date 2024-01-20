@@ -6,6 +6,8 @@
         brlaser
         brgenml1lpr
         brgenml1cupswrapper
+        mfcj6510dwlpr
+        mfcj6510dw-cupswrapper
       ];
     };
     avahi = {

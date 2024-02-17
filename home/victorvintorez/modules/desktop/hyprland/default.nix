@@ -45,8 +45,8 @@ in {
         gaps_in = 5;
         gaps_out = 5;
         border_size = 2;
-        "col.active_border" = "rgb(${config.colorScheme.colors.base0C}) rgb(${config.colorScheme.colors.base0D}) 45deg";
-        "col.inactive_border" = "rgb(${config.colorScheme.colors.base04})";
+        "col.active_border" = "rgb(${config.colorScheme.palette.base0C}) rgb(${config.colorScheme.palette.base0D}) 45deg";
+        "col.inactive_border" = "rgb(${config.colorScheme.palette.base04})";
         no_border_on_floating = false;
         no_cursor_warps = true;
         resize_on_border = true;

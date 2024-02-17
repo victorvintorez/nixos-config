@@ -32,8 +32,10 @@
       };
     };
     xserver = {
-      layout = "us";
-      xkbVariant = "";
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
     };
     fprintd = {
       enable = true;

@@ -8,9 +8,9 @@
 
 		theme = {
 			colors = {
-				background-darker = config.colorScheme.colors.base01;
-				background = config.colorScheme.colors.base02;
-				foreground = config.colorScheme.colors.base05;
+				background-darker = config.colorScheme.palette.base01;
+				background = config.colorScheme.palette.base02;
+				foreground = config.colorScheme.palette.base05;
 			};
 			font = "Iosevka Term";
 		};

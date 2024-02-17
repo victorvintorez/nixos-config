@@ -7,13 +7,12 @@
 		enable = true;
 
 		theme = {
-			background-darker = config.colorScheme.colors.base01;
-			background = config.colorScheme.colors.base02;
-			foreground = config.colorScheme.colors.base05;
-			font = "Iosevka Term";
-			darkreader = {
-				enable = true;
+			colors = {
+				background-darker = config.colorScheme.colors.base01;
+				background = config.colorScheme.colors.base02;
+				foreground = config.colorScheme.colors.base05;
 			};
+			font = "Iosevka Term";
 		};
 
 		search = {
@@ -27,6 +26,9 @@
 		};
 
 		extensions = {
+			darkreader = {
+				enable = true;
+			};
 			# Disable Default Extensions
 			defaultExtensions = {};
 

@@ -2,7 +2,7 @@
 , fontconfig, freetype, gdk-pixbuf, glib, pango, mesa, nspr, nss, gtk3
 , at-spi2-atk, gsettings-desktop-schemas, gobject-introspection, wrapGAppsHook
 , libX11, libXScrnSaver, libXcomposite, libXcursor, libXdamage, libXext
-, libXfixes, libXi, libXrandr, libXrender, libXtst, libxcb, libxshmfence, nghttp2
+, libXfixes, libXi, libXrandr, libXrender, libXtst, libxcb, libxshmfence, libglvnd, nghttp2
 , libudev0-shim, glibc, curl, openssl, autoPatchelfHook }:
 
 let
@@ -10,6 +10,7 @@ let
     curl
     glibc
     libudev0-shim
+    libglvnd
     nghttp2
     openssl
     stdenv.cc.cc.lib
@@ -71,7 +72,7 @@ in stdenv.mkDerivation rec {
   unpackPhase = "dpkg-deb -x $src .";
 
   installPhase = ''
-    set -x;
+
     mkdir -p $out/share/insomnium $out/lib $out/bin
 
     mv usr/share/* $out/share/
@@ -84,7 +85,7 @@ in stdenv.mkDerivation rec {
   preFixup = ''
     wrapProgramShell "$out/bin/insomnium" \
         "''${gappsWrapperArgs[@]}" \
-        --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform=wayland --enable-features=WaylandWindowDecorations}}" \
+        --add-flags "\''${NIXOS_OZONE_WL:+\''${WAYLAND_DISPLAY:+--ozone-platform=wayland --enable-features=WaylandWindowDecorations}} --no-sandbox --disable-gpu" \
         --prefix LD_LIBRARY_PATH : ${runtimeLibs}
   '';
 

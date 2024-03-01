@@ -3,5 +3,6 @@
     libreoffice
     drawio
     obsidian-wayland
+    ciscoPacketTracer8
   ];
 }

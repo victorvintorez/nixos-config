@@ -71,10 +71,11 @@ in stdenv.mkDerivation rec {
   unpackPhase = "dpkg-deb -x $src .";
 
   installPhase = ''
+    set -x;
     mkdir -p $out/share/insomnium $out/lib $out/bin
 
     mv usr/share/* $out/share/
-    mv opt/insomnium/* $out/share/insomnium
+    mv opt/Insomnium/* $out/share/insomnium
 
     ln -s $out/share/insomnium/insomnium $out/bin/insomnium
     sed -i 's|\/opt\/insomnium|'$out'/bin|g' $out/share/applications/insomnium.desktop

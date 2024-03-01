@@ -20,7 +20,7 @@ in stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://github.com/ArchGPT/insomnium/releases/download/core%40${version}/Insomnium.Core-${version}.deb";
-    sha256 = "sha256-02zhakx8qmwrknqd6il4z7wiwy5mnsc1c0sirfqfm9v8wndsxal8";
+    sha256 = "sha256-iKqum+Vop+qwy1EDFpi2tXge+fmERtOwnZlXjPpU8As=";
   };
 
   nativeBuildInputs = [

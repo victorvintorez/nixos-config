@@ -85,7 +85,7 @@
       inherit legacyPackages;
       modules = import ./modules;
       overlays = import ./overlays { inherit inputs; };
-      packages = import ./pkgs { inherit inputs; };
+      packages = import ./packages { inherit legacyPackages; };
       
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'

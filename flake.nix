@@ -69,11 +69,13 @@
   outputs = { self, nixpkgs, home-manager, nur, ... }@inputs: 
     let
       inherit (self) outputs;
-      legacyPackages = nixpkgs.lib.genAttrs [ "x86_64-linux" ] (system:
-        import inputs.nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-          config.allowUnfreePredicate = _: true;
+      lib = nixpkgs.lib // home-manager.lib;
+      systems = [ "x86_64-linux" "aarch64-linux" ];
+      forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+      pkgsFor = lib.genAttrs systems (system: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+        config.allowUnfreePredicate = _: true;
           config.permittedInsecurePackages = [
             "electron-24.8.6"
           ];
@@ -82,17 +84,17 @@
           ];
       });
     in {
-      inherit legacyPackages;
+      inherit lib;
       modules = import ./modules;
-      overlays = import ./overlays { inherit inputs; };
-      packages = import ./packages { inherit legacyPackages; };
+      overlays = import ./overlays { inherit inputs outputs; };
+      packages = forEachSystem (pkgs: import ./packages { inherit pkgs; });
       
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         # Desktop
         desktop = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages.x86_64-linux;
+          pkgs = pkgsFor.x86_64-linux;
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/desktop
@@ -101,7 +103,7 @@
 
         # TODO - Laptop
         laptop = nixpkgs.lib.nixosSystem {
-          pkgs = legacyPackages.x86_64-linux;
+          pkgs = pkgsFor.x86_64-linux;
           specialArgs = { inherit inputs outputs; };
           modules = [
             ./hosts/laptop

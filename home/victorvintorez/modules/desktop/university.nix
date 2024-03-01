@@ -4,6 +4,5 @@
     drawio
     obsidian-wayland
     ciscoPacketTracer8
-    insomnium
   ];
 }

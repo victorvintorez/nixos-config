@@ -85,6 +85,7 @@
     wget
     git
     nixd
+    insomnium
   ];
 
   # SSH Server

@@ -40,6 +40,9 @@ in {
     xwayland = {
       enable = true;
     };
+    plugins = [
+      inputs.hyprgrass.packages.${pkgs.system}.default
+    ];
     settings = {
       general = {
         gaps_in = 5;

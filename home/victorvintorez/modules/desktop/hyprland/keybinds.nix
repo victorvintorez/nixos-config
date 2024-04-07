@@ -49,8 +49,8 @@
         "$M SHIFT, 0, movetoworkspace, 10"
 
         # Scroll through workspaces
-        "$M, mouse_down, workspace, e+1"
-        "$M, mouse_up, workspace, e-1"
+        "$M, mouse_down, workspace, e-1"
+        "$M, mouse_up, workspace, e+1"
 
         # Application Binds
         "$M, Q, exec, kitty"

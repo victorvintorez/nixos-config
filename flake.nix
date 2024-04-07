@@ -44,7 +44,7 @@
     # Better touch gestures
     hyprgrass = {
       url = "github:horriblename/hyprgrass";
-      inputs.nixpkgs.follows = "hyprland";
+      inputs.hyprland.follows = "hyprland";
     };
     
     # Hyprland XDG Desktop Portal

@@ -8,6 +8,7 @@
     jetbrains.rust-rover
     jetbrains.webstorm
     github-copilot-intellij-agent # ln -fs /run/current-system/sw/bin/copilot-agent ~/.local/share/JetBrains/IntelliJIdea2022.2/github-copilot-intellij/copilot-agent/bin/copilot-agent-linux
+    nodejs_20
   ];
 
   home.sessionVariables = {
